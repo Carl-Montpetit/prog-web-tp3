@@ -1,3 +1,14 @@
+#body {
+  background-image: url(../../../IMAGES/water1.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#calendar {
+  background-color: rgba(135, 206, 250, 0.8);
+}
+
 .clearfix::after,
 .calendar ol::after {
   content: ".";
@@ -10,7 +21,8 @@
 /* ================
 Calendar Styling */
 .calendar {
-  border-radius: 10px;
+  border-radius: 25px;
+  border-style: solid;
 }
 
 .month {
@@ -29,7 +41,7 @@ Calendar Styling */
 }
 
 .calendar .day-names {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #000;
 }
 
 .calendar .day-names li {
@@ -38,7 +50,7 @@ Calendar Styling */
 }
 
 .calendar .days li {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #000;
   min-height: 8rem;
 }
 
@@ -49,7 +61,7 @@ Calendar Styling */
 .calendar .days li .event {
   font-size: 0.75rem;
   padding: 0.4rem;
-  color: white;
+  color: black;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -78,5 +90,5 @@ Calendar Styling */
 }
 
 .calendar .days li.outside .date {
-  color: #ddd;
+  color: dimgrey;
 }
