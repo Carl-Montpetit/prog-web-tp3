@@ -17,14 +17,16 @@ import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 
 const appRoutes: Routes = [
+  { path: 'connection', component: LoginComponent },
   { path: 'calendrier', component: CalendarComponent },
   { path: 'programmes', component: ProgramsComponent },
-  { path: 'shopping-list', component: ShoppingListComponent },
+  { path: 'panier', component: ShoppingListComponent },
   { path: '', component: MainComponent },
   { path: '**', component: ErrorComponent },
+
 ];
 
-@NgModule({
+@NgModule( {
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -43,10 +45,11 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot( appRoutes )
   ],
-  exports: [RouterModule],
+  exports: [ RouterModule ],
   providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+  bootstrap: [ AppComponent ]
+} )
+export class AppModule {
+}
