@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success">New recipe</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <a href="#" class="list-group-item clearfix" *ngFor="let program of programs">
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">{{ program.name }}</h4>
+        <p class="list-group-item-text">{{ program.description }}</p>
+      </div>
+      <span class="float-right">
+        <!--or, src="{{ recipe.imagePath }}"-->
+          <img [src]="program.imagePath" alt="{{ program.name }}" class="img-responsive" style="max-height: 100px;">
+        </span>
+    </a>
+    <app-program-item></app-program-item>
+  </div>
+</div>
