@@ -9,6 +9,18 @@ import { RecipesDetailComponent } from './recipes/recipes-detail/recipes-detail.
 import { RecipeItemComponent } from './recipes/recipes-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { RouterModule, Routes } from '@angular/router';
+import { MainComponent } from './main/main.component';
+import { ErrorComponent } from './error/error.component';
+
+const appRoutes: Routes = [
+  { path: 'calendrier', component: CalendarComponent },
+  { path: 'programs', component: ProgramsComponent },
+  { path: 'shopping-list', component: ShoppingListComponent },
+  { path: '', component: MainComponent },
+  { path: '**', component: ErrorComponent },
+];
 
 @NgModule({
   declarations: [
@@ -20,11 +32,16 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
+    CalendarComponent,
+    MainComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
