@@ -13,6 +13,8 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { ErrorComponent } from './error/error.component';
+import { LoginComponent } from './login/login.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
 
 const appRoutes: Routes = [
   { path: 'calendrier', component: CalendarComponent },
@@ -35,6 +37,8 @@ const appRoutes: Routes = [
     CalendarComponent,
     MainComponent,
     ErrorComponent,
+    LoginComponent,
+    CreateAccountComponent,
   ],
   imports: [
     BrowserModule,
