@@ -1,1 +1,30 @@
-<p>create-account works!</p>
+<div id="body">
+  <br>
+  <h1 class="text-center">Créer un compte</h1>
+  <br>
+  <div id="createAccount">
+    <form id="connectForm" class="container text-center" method="post" form action="">
+      <br>
+      <label class="font-weight-bold" for="firstName">Prénom :</label>
+      <br>
+      <input type="firtName" id="firtName" name="firtName" placeholder="Entrez votre prénom" required>
+      <br>
+      <label class="font-weight-bold" for="email">Nom :</label>
+      <br>
+      <input type="lastName" id="lastName" name="lastName" placeholder="Entrez votre nom" required>
+      <br>
+      <label class="font-weight-bold" for="email">Courriel :</label>
+      <br>
+      <input type="email" id="email" name="email" placeholder="Entrez votre courriel" required>
+      <br>
+      <label class="font-weight-bold" for="pw1">Mot de passe :</label>
+      <br>
+      <input type="password" id="pw1" name="pw1" placeholder="Créer un mot de passe" required>
+      <br>
+      <input type="password" id="pw2" name="pw2" placeholder="Confirmez le mot de passe" required>
+      <br><br>
+      <input class="btn btn-success border-dark shadow-lg" type="submit" name="submit" value="Se Connecter">
+      <input id="cancel" class="btn btn-danger border-dark shadow-lg" type="reset" value="Annuler">
+    </form>
+  </div>
+</div>

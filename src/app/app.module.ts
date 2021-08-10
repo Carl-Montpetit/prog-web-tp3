@@ -18,6 +18,7 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 
 const appRoutes: Routes = [
   { path: 'connection', component: LoginComponent },
+  { path: 'creation', component: CreateAccountComponent },
   { path: 'calendrier', component: CalendarComponent },
   { path: 'programmes', component: ProgramsComponent },
   { path: 'panier', component: ShoppingListComponent },
@@ -26,7 +27,7 @@ const appRoutes: Routes = [
 
 ];
 
-@NgModule( {
+@NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -45,11 +46,11 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot( appRoutes )
+    RouterModule.forRoot(appRoutes)
   ],
-  exports: [ RouterModule ],
+  exports: [RouterModule],
   providers: [],
-  bootstrap: [ AppComponent ]
-} )
+  bootstrap: [AppComponent]
+})
 export class AppModule {
 }
