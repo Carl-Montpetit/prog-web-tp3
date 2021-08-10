@@ -1,12 +1,109 @@
-<div id="body" class="img-fluid">
-  <div class="row m-3">
-    <div class="col-sm-5">
-      <app-program-list></app-program-list>
-    </div>
-    <div class="col-sm-7">
-      <app-program-detail></app-program-detail>
-    </div>
-    <div class="col-sm-7">
+<body>
+  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Liste des programmes offert</h1>
+  </div>
+
+  <div class="container">
+    <!-- Le classique -->
+    <div class="card-deck mb-3 text-center">
+      <div class="card mb-4 box-shadow">
+        <div class="card-header py-3 text-white bg-primary border-primary">
+          <h4 class="my-0 font-weight-normal">Le classique</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">$100</h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>blablabla</li>
+            <li>blablabla</li>
+            <li>blablabla</li>
+            <li>blablabla</li>
+          </ul>
+          <button type="button" class="btn btn-lg btn-block btn-primary">Ajouter au panier</button>
+        </div>
+      </div>
+      <!-- Arts et Science -->
+      <div class="card mb-4 box-shadow">
+        <div class="card-header py-3 text-white bg-primary border-primary">
+          <h4 class="my-0 font-weight-normal">Arts et Science</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">$150</h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>blablabla</li>
+            <li>blablabla</li>
+            <li>blablabla</li>
+            <li>blablabla</li>
+          </ul>
+          <button type="button" class="btn btn-lg btn-block btn-primary">Ajouter au panier</button>
+        </div>
+      </div>
+      <!-- L'enfant actif -->
+      <div class="card mb-4 box-shadow">
+        <div class="card-header py-3 text-white bg-primary border-primary">
+          <h4 class="my-0 font-weight-normal">L'enfant actif</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">$100</h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>blablabla</li>
+            <li>blablabla</li>
+            <li>blablabla</li>
+            <li>blablabla</li>
+          </ul>
+          <button type="button" class="btn btn-lg btn-block btn-primary">Ajouter au panier</button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+
+  <!-- comparing programs -->
+  <h2 class="display-6 text-center mb-4">Comparer les programmes</h2>
+  <div class="table-responsive">
+    <table class="table text-center">
+      <thead>
+        <tr>
+          <th style="width: 34%;"></th>
+          <th style="width: 22%;">Sport</th>
+          <th style="width: 22%;">Science</th>
+          <th style="width: 22%;">Autres</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th scope="row" class="text-start">Le classique</th>
+          <td><svg class="bi" width="24" height="24">
+              <use xlink:href="#check" />
+            </svg></td>
+          <td><svg class="bi" width="24" height="24">
+              <use xlink:href="#check" />
+            </svg></td>
+          <td><svg class="bi" width="24" height="24">
+              <use xlink:href="#check" />
+            </svg></td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-start">Arts et science</th>
+          <td></td>
+          <td><svg class="bi" width="24" height="24">
+              <use xlink:href="#check" />
+            </svg></td>
+          <td><svg class="bi" width="24" height="24">
+              <use xlink:href="#check" />
+            </svg></td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-start">L'enfant actif</th>
+          <td></td>
+          <td><svg class="bi" width="24" height="24">
+              <use xlink:href="#check" />
+            </svg></td>
+          <td><svg class="bi" width="24" height="24">
+              <use xlink:href="#check" />
+            </svg></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
