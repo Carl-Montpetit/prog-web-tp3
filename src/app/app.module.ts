@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from "@angular/forms";
 import { HeaderComponent } from './header/header.component';
 import { ProgramsComponent } from './programs/programs.component';
@@ -15,11 +16,19 @@ import { MainComponent } from './main/main.component';
 import { ErrorComponent } from './error/error.component';
 import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { JuneComponent } from './calendar/june/june.component';
+import { JuilletComponent } from './calendar/juillet/juillet.component';
+import { AoutComponent } from './calendar/aout/aout.component';
+import { JulyComponent } from './calendar/july/july.component';
+import { AugustComponent } from './calendar/august/august.component';
 
 const appRoutes: Routes = [
   { path: 'connection', component: LoginComponent },
   { path: 'creation', component: CreateAccountComponent },
-  { path: 'calendrier', component: CalendarComponent },
+  { path: 'calendrier', component: CalendarComponent},
+  { path: 'calendrier/juin', component: JuneComponent },
+  { path: 'calendrier/juillet', component: JulyComponent},
+  { path: 'calendrier/aout', component: AugustComponent},
   { path: 'programmes', component: ProgramsComponent },
   { path: 'panier', component: ShoppingListComponent },
   { path: '', component: MainComponent },
@@ -42,9 +51,15 @@ const appRoutes: Routes = [
     ErrorComponent,
     LoginComponent,
     CreateAccountComponent,
+    JuneComponent,
+    JuilletComponent,
+    AoutComponent,
+    JulyComponent,
+    AugustComponent,
   ],
   imports: [
     BrowserModule,
+    FontAwesomeModule,
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
