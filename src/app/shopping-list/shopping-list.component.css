@@ -56,8 +56,8 @@ h1 {
   border-width: 2px;
   border-color: #004e64;
   background-color: rgba(135, 206, 250, 0.8);
-  padding: 10px;
-  margin: 0;
+  padding: 2px;
+  margin: auto;
   box-shadow: 10px 0 20px;
   height: fit-content;
   width: fit-content;
