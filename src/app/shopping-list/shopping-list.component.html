@@ -1,10 +1,17 @@
-<div id="body">
-  <h1 class="text-center">Votre panier d'achat</h1>
-  <div class="row m-3">
-    <div class="col-sm-12">
-      <app-shopping-edit></app-shopping-edit>
-      <hr>
-      <p>The list</p>
+<div id="body" class="card-body">
+  <h1>Votre facture</h1>
+  <div class="p-lg-5">
+    <div class="row">
+      <div class="col-md-6">
+        <div id="a" class="container">
+          <app-shopping-pay></app-shopping-pay>
+        </div>
+      </div>
+      <div id="b" class="col-md-6 ">
+        <div>
+          <app-shopping-edit></app-shopping-edit>
+        </div>
+      </div>
     </div>
   </div>
 </div>

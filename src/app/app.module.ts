@@ -21,6 +21,7 @@ import { JuilletComponent } from './calendar/juillet/juillet.component';
 import { AoutComponent } from './calendar/aout/aout.component';
 import { JulyComponent } from './calendar/july/july.component';
 import { AugustComponent } from './calendar/august/august.component';
+import { ShoppingPayComponent } from './shopping-list/shopping-pay/shopping-pay.component';
 
 const appRoutes: Routes = [
   { path: 'connection', component: LoginComponent },
@@ -56,6 +57,7 @@ const appRoutes: Routes = [
     AoutComponent,
     JulyComponent,
     AugustComponent,
+    ShoppingPayComponent,
   ],
   imports: [
     BrowserModule,

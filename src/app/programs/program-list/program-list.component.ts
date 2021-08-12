@@ -8,9 +8,12 @@ import { Program } from "../program-model";
 })
 export class ProgramListComponent implements OnInit {
   programs = [
-    new Program('Le Classique', 'Description classique', 'image classique'),
-    new Program('Art et Science', 'description art et science', 'image art et science'),
-    new Program('Sportif', 'description sportif', 'lien image sportif'),
+    new Program('Le Classique','Description classique', ['randonné'], 'vendredi',
+      150, 'lienC'),
+    new Program('Art & Science','Description Art & Science', ['observation astronomique'],
+      'samedi', 200, 'lienAS'),
+    new Program('Sportif','Description Sportif', ['course'], 'mardi',
+      250, 'lienS'),
   ];
 
   constructor() { }

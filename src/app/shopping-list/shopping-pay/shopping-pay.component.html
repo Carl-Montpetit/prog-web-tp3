@@ -1,0 +1,83 @@
+<!--TODO : form validation HTML is done but needs the TS validation (for front-end) + back-end too-->
+<div>
+  <h3 class="mb-3">Information personnel</h3>
+  <form class="form-group" novalidate>
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="firstName">Prénom</label>
+        <input type="text" class="form-control" id="firstName" placeholder="Votre prénom" value="" required>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="lastName">Nom</label>
+        <input type="text" class="form-control" id="lastName" placeholder="Votre nom de famille" value="" required>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="email">Courriel </label>
+      <input type="email" class="form-control" id="email" placeholder="abc123@exemple.com">
+    </div>
+
+    <div class="mb-3">
+      <label for="address">Adresse</label>
+      <input type="text" class="form-control" id="address" placeholder="ex : 1234 Rue Principal" required>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5 mb-3">
+        <label for="country">Pays</label>
+        <select class="custom-select d-block w-100" id="country" required>
+          <option value="">Choisir...</option>
+          <option>Canada</option>
+          <option>Étas-Unis</option>
+          <option>Mexique</option>
+          <option>France</option>
+          <option>Japon</option>
+          <option>Chine</option>
+        </select>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="state">Province</label>
+        <select class="custom-select d-block w-100" id="state" required>
+          <option value="">Choisir...</option>
+          <option>Québec</option>
+          <option>Ontario</option>
+          <option>Manitoba</option>
+          <option>Gaspésie</option>
+          <option>New-Jersey</option>
+        </select>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="zip">Code postal</label>
+        <input type="text" class="form-control" id="zip" placeholder="A#A #A#" required>
+      </div>
+    </div>
+    <hr class="mb-4">
+
+    <h4 class="mb-3">Paiement</h4>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="cc-name">Nom</label>
+        <input type="text" class="form-control" id="cc-name" placeholder="Nom sur la carte" required>
+        <small class="text-black-50 font-weight-bold">Nom complet tel qu'affiché sur la carte</small>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="cc-number">Numéro de Carte de Crédit</label>
+        <input type="password" class="form-control" id="cc-number" placeholder="xxxx xxxx xxxx xxxx" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 mb-3">
+        <label for="cc-expiration">Expiration</label>
+        <input type="date" class="form-control" id="cc-expiration" placeholder="" required>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="cc-cvv">CVV</label>
+        <input type="password" class="form-control" id="cc-cvv" placeholder="xxx" required>
+      </div>
+    </div>
+    <hr class="mb-4">
+    <button class="btn btn-success btn-lg btn-block w-auto" type="submit">Confirmer et Payer</button>
+  </form>
+</div>
