@@ -3,20 +3,18 @@
 <br>
 <div id="aa" class="container">
   <div>
-    <form id="connectForm" class="form-group text-center" method="post" action="#">
+    <form [formGroup]="newMemberForm" (ngSubmit)="onSubmit()">
       <label class="font-weight-bold" for="firstName">Prénom :</label>
-      <input type="text" id="firstName" class="form-control" name="firstName" placeholder="Entrez le prénom"
-             required>
+      <input type="text" id="firstName" placeholder="Entrez le prénom"><br>
       <label class="font-weight-bold" for="lastName">Nom de famille :</label>
-      <input type="text" id="lastName" class="form-control" name="firstName" placeholder="Entrez le nom de famille"
-             required>
-      <label class="font-weight-bold" for="date">Date de naissance :</label>
-      <input type="date" id="date" class="form-control" name="date" placeholder="Entrez la date de naissance" required>
+      <input type="text" id="lastName" placeholder="Entrez le nom de famille"><br>
+      <label class="font-weight-bold" for="dateOfBirth">Date de naissance :</label>
+      <input type="date" id="dateOfBirth" placeholder="Entrez la date de naissance">
       <br>
-      <input class="form-control btn btn-success border-dark w-50 text-light m-2" type="submit" name="submit"
-             value="Ajouter">
+      <button type="submit" [disabled]="!newMemberForm.valid" class="form-control btn btn-success border-dark w-50 text-light m-2">Ajouter</button>
       <input id="cancel" class="form-control btn btn-danger border-dark w-50 text-light m-2" type="reset"
              value="Annuler">
     </form>
+    <p>Form Status: {{ newMemberForm.status }}</p>
   </div>
 </div>

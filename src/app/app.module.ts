@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { ProgramsComponent } from './programs/programs.component';
 import { ProgramDetailComponent } from './programs/program-detail/program-detail.component';
@@ -72,6 +73,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FontAwesomeModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot( appRoutes )
   ],
   exports: [ RouterModule ],
