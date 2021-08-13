@@ -17,8 +17,6 @@ import { ErrorComponent } from './error/error.component';
 import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { JuneComponent } from './calendar/june/june.component';
-import { JuilletComponent } from './calendar/juillet/juillet.component';
-import { AoutComponent } from './calendar/aout/aout.component';
 import { JulyComponent } from './calendar/july/july.component';
 import { AugustComponent } from './calendar/august/august.component';
 
@@ -52,8 +50,6 @@ const appRoutes: Routes = [
     LoginComponent,
     CreateAccountComponent,
     JuneComponent,
-    JuilletComponent,
-    AoutComponent,
     JulyComponent,
     AugustComponent,
   ],
