@@ -8,27 +8,14 @@
   position: relative;
 }
 
-div.b {
+#b,#c {
   border-radius: 50px;
   border-style: solid;
   border-width: 2px;
   border-color: #004e64;
-  text-align: center;
   background-color: rgba(135, 206, 250, 0.8);
   margin: auto;
-  padding: 10px;
-  box-shadow: 10px 0px 20px;
-}
-
-div.c {
-  border-radius: 50px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #004e64;
-  background-color: rgba(135, 206, 250, 0.6);
-  margin: auto;
-  margin-top: 20px;
-  padding: 10px;
+  padding: 30px;
   box-shadow: 10px 0px 20px;
 }
 
