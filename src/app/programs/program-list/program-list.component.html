@@ -1,27 +1,27 @@
 <br>
 <div class="row">
   <div class="col-xs-12">
-    <!--It will be dynamic here-->
+    <!--TODO : It will be dynamic here-->
     <button class="btn btn-warning border-dark text-dark shadow-lg">Ajouter un programme</button>
   </div>
 </div>
 <br>
 <div class="row">
   <div class="col-xs-12">
-    <!--It will be dynamic here-->
+    <!--TODO : It will be dynamic here-->
     <a href="#" class="list-group-item clearfix bg-light border-dark shadow-lg" *ngFor="let program of programs">
       <div class="pull-left">
-        <!--It will be dynamic here-->
+        <!--TODO : It will be dynamic here-->
         <h4 class="list-group-item-heading">{{ program.name }}</h4>
-        <!--It will be dynamic here-->
+        <!--TODO : It will be dynamic here-->
         <p class="list-group-item-text">{{ program.description }}</p>
       </div>
       <span class="float-right">
-        <!--It will be dynamic here-->
+        <!--TODO : It will be dynamic here-->
           <img [src]="program.imagePath" alt="{{ program.name }}" class="img-responsive" style="max-height: 100px;">
         </span>
     </a>
-    <!--It will be dynamic here-->
+    <!--TODO : It will be dynamic here-->
     <app-program-item></app-program-item>
   </div>
 </div>
