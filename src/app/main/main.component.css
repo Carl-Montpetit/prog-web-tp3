@@ -8,30 +8,6 @@
   position: relative;
 }
 
-h1 {
-  color: #004e64;
-  text-align: center;
-  font-family: Algerian;
-  font-size: 70px;
-  animation-name: Anti-covidios;
-  animation-duration: 8s;
-}
-
-@keyframes Anti-covidios {
-  0% {
-    color: #00A5CF;
-  }
-  25% {
-    color: #9FFFCB;
-  }
-  50% {
-    color: #25A18E;
-  }
-  100% {
-    color: #7AE582;
-  }
-}
-
 div.b {
   border-radius: 50px;
   border-style: solid;

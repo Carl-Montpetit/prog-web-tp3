@@ -11,30 +11,6 @@
   z-index: -1;
 }
 
-h1 {
-  color: #004e64;
-  text-align: center;
-  font-family: Algerian;
-  font-size: 70px;
-  animation-name: SeConnecter;
-  animation-duration: 8s;
-}
-
-@keyframes SeConnecter {
-  0% {
-    color: #00A5CF;
-  }
-  25% {
-    color: #9FFFCB;
-  }
-  50% {
-    color: #25A18E;
-  }
-  100% {
-    color: #7AE582;
-  }
-}
-
 #a {
   font-size: x-large;
   border-radius: 50px;
