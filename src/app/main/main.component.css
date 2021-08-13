@@ -3,35 +3,9 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  width: 100%; 
-  height: 100%; 
-  left: 0px; 
-  top: 5%; 
-  z-index: -1;
-}
-
-h1 {
-  color: #004e64;
-  text-align: center;
-  font-family: Algerian;
-  font-size: 70px;
-  animation-name: Anti-covidios;
-  animation-duration: 8s;
-}
-
-@keyframes Anti-covidios {
-  0% {
-    color: #00A5CF;
-  }
-  25% {
-    color: #9FFFCB;
-  }
-  50% {
-    color: #25A18E;
-  }
-  100% {
-    color: #7AE582;
-  }
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 div.b {
@@ -40,7 +14,7 @@ div.b {
   border-width: 2px;
   border-color: #004e64;
   text-align: center;
-  background-color: rgba(135, 206, 250, 0.6);
+  background-color: rgba(135, 206, 250, 0.8);
   margin: auto;
   padding: 10px;
   box-shadow: 10px 0px 20px;

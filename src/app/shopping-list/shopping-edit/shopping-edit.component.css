@@ -1,1 +1,16 @@
+#tab {
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+  width: auto;
+  height: auto;
+}
 
+#z  {
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  padding: 2px;
+  width: fit-content;
+  height: fit-content;
+}

@@ -1,30 +1,37 @@
 <div id="body">
-  <br>
-  <h1 class="text-center">Créer un compte</h1>
-  <br>
-  <div id="createAccount">
-    <form id="connectForm" class="container text-center" method="post" form action="">
-      <br>
-      <label class="font-weight-bold" for="firstName">Prénom :</label>
-      <br>
-      <input type="firtName" id="firtName" name="firtName" placeholder="Entrez votre prénom" required>
-      <br>
-      <label class="font-weight-bold" for="email">Nom :</label>
-      <br>
-      <input type="lastName" id="lastName" name="lastName" placeholder="Entrez votre nom" required>
-      <br>
-      <label class="font-weight-bold" for="email">Courriel :</label>
-      <br>
-      <input type="email" id="email" name="email" placeholder="Entrez votre courriel" required>
-      <br>
-      <label class="font-weight-bold" for="pw1">Mot de passe :</label>
-      <br>
-      <input type="password" id="pw1" name="pw1" placeholder="Créer un mot de passe" required>
-      <br>
-      <input type="password" id="pw2" name="pw2" placeholder="Confirmez le mot de passe" required>
-      <br><br>
-      <input class="btn btn-success border-dark shadow-lg" type="submit" name="submit" value="Se Connecter">
-      <input id="cancel" class="btn btn-danger border-dark shadow-lg" type="reset" value="Annuler">
+  <h1 class="text-center p-5">Créer un compte</h1>
+  <div class="container text-center form-inline justify-content-center p-2">
+    <form id="a" class="form-group w-25 ">
+      <div>
+        <label class="font-weight-bold" for="firstName">Prénom :</label>
+        <input type="firstName" id="firstName" class="form-control w-auto text-center" name="firstName"
+               placeholder="Entrez votre prénom"
+               required>
+      </div>
+      <div>
+        <label class="font-weight-bold" for="email">Nom :</label>
+        <input type="lastName" id="lastName" class="form-control w-auto" name="lastName" placeholder="Entrez votre nom"
+               required>
+      </div>
+      <div>
+        <label class="font-weight-bold" for="email">Courriel :</label>
+        <input type="email" id="email" class="form-control w-auto" name="email" placeholder="Entrez votre courriel"
+               required>
+      </div>
+      <div>
+        <label class="font-weight-bold" for="pw1">Mot de passe :</label>
+        <input type="password" id="pw1" class="form-control w-auto" name="pw1" placeholder="Créer un mot de passe"
+               required>
+      </div>
+      <div>
+        <input type="password" id="pw2" class="form-control w-auto" name="pw2" placeholder="Confirmez le mot de passe"
+               required>
+      </div>
+      <div>
+        <input class="form-control btn btn-success border-dark w-auto m-3" type="submit" name="submit" value="Valider">
+        <input id="cancel" class="form-control btn btn-danger border-dark w-auto m-3" type="reset" value="Annuler">
+      </div>
     </form>
   </div>
 </div>
+

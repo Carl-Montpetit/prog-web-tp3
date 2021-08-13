@@ -1,5 +1,5 @@
 #body {
-  background-image: url(../../../IMAGES/fire2.jpg);
+  background-image: url(../../../IMAGES/fire5.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -20,13 +20,9 @@
   text-align: center;
   background-color: rgba(135, 206, 250, 0.8);
   margin: auto;
-  padding: 10px;
+  padding: 30px;
+  width: auto;
+  height: auto;
   box-shadow: 10px 0 20px;
   justify-content: center;
-}
-
-#email, #pw1 {
-  justify-content: center;
-  text-align: center;
-  margin-left: 25%;
 }

@@ -19,14 +19,23 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { JuneComponent } from './calendar/june/june.component';
 import { JulyComponent } from './calendar/july/july.component';
 import { AugustComponent } from './calendar/august/august.component';
+import { ShoppingPayComponent } from './shopping-list/shopping-pay/shopping-pay.component';
+import { MembersComponent } from './members/members.component';
+import { MemberAddComponent } from './members/member-add/member-add.component';
+import { MemberDeleteComponent } from './members/member-delete/member-delete.component';
+import { SubscriptionsComponent } from './subscriptions/subscriptions.component';
+import { HistoryComponent } from './history/history.component';
 
 const appRoutes: Routes = [
   { path: 'connection', component: LoginComponent },
+  { path: 'inscriptions', component: SubscriptionsComponent },
+  { path: 'historique', component: HistoryComponent },
+  { path: 'membres', component: MembersComponent },
   { path: 'creation', component: CreateAccountComponent },
-  { path: 'calendrier', component: CalendarComponent},
+  { path: 'calendrier', component: CalendarComponent },
   { path: 'calendrier/juin', component: JuneComponent },
-  { path: 'calendrier/juillet', component: JulyComponent},
-  { path: 'calendrier/aout', component: AugustComponent},
+  { path: 'calendrier/juillet', component: JulyComponent },
+  { path: 'calendrier/aout', component: AugustComponent },
   { path: 'programmes', component: ProgramsComponent },
   { path: 'panier', component: ShoppingListComponent },
   { path: '', component: MainComponent },
@@ -34,7 +43,7 @@ const appRoutes: Routes = [
 
 ];
 
-@NgModule({
+@NgModule( {
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -52,16 +61,22 @@ const appRoutes: Routes = [
     JuneComponent,
     JulyComponent,
     AugustComponent,
+    ShoppingPayComponent,
+    MembersComponent,
+    MemberAddComponent,
+    MemberDeleteComponent,
+    SubscriptionsComponent,
+    HistoryComponent,
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot( appRoutes )
   ],
-  exports: [RouterModule],
+  exports: [ RouterModule ],
   providers: [],
-  bootstrap: [AppComponent]
-})
+  bootstrap: [ AppComponent ]
+} )
 export class AppModule {
 }
