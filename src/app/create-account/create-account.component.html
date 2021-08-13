@@ -1,7 +1,11 @@
 <div id="body">
-  <h1
-    class="display-3 text-light border border-dark bg-info text-center rounded-pill m-5 p-2 font-weight-bolder">Créer
-    un compte</h1>
+  <div class="row justify-content-center p-5">
+    <h1
+      class="display-3 text-light border border-dark bg-info text-center rounded-pill m-5 p-2 font-weight-bolder">
+      Créer un compte
+    </h1>
+  </div>
+
   <div class="container text-center form-inline justify-content-center p-2">
     <form id="a" class="form-group w-25 ">
       <div>
@@ -13,6 +17,11 @@
       <div>
         <label class="font-weight-bold" for="email">Nom :</label>
         <input type="lastName" id="lastName" class="form-control w-auto" name="lastName" placeholder="Entrez votre nom"
+               required>
+      </div>
+      <div>
+        <label class="font-weight-bold" for="date">Date de naissance :</label>
+        <input type="date" id="date" class="form-control w-auto" name="date"
                required>
       </div>
       <div>
