@@ -1,4 +1,4 @@
-#body {
+#june {
     background-image: url(../../../../IMAGES/water1.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -7,11 +7,6 @@
 
   #calendar, button {
     background-color: rgba(135, 206, 250, 0.8);
-  }
-
-  button {
-    font-size: xx-large;
-    padding: 15px;
   }
 
   .clearfix::after,

@@ -25,16 +25,3 @@
   width: fit-content;
 }
 
-#b {
-  border-radius: 50px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #004e64;
-  background-color: rgba(135, 206, 250, 0.8);
-  padding: 2px;
-  margin: auto;
-  box-shadow: 10px 0 20px;
-  height: fit-content;
-  width: fit-content;
-/*FIXME : j'ai pas réussis à fixer la largeur de la fenêtre amusez vous avec ça si vous voulez*/
-}
