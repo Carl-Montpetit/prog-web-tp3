@@ -24,6 +24,7 @@ import { MemberAddComponent } from './members/member-add/member-add.component';
 import { MemberDeleteComponent } from './members/member-delete/member-delete.component';
 import { SubscriptionsComponent } from './subscriptions/subscriptions.component';
 import { HistoryComponent } from './history/history.component';
+import { AdminComponent } from './admin/admin.component';
 
 const appRoutes: Routes = [
   { path: 'connection', component: LoginComponent },
@@ -61,6 +62,7 @@ const appRoutes: Routes = [
     MemberDeleteComponent,
     SubscriptionsComponent,
     HistoryComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,

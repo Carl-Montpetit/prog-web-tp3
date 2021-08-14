@@ -13,4 +13,6 @@
   height: fit-content;
 }
 
-
+#firstNameL,#lastNameL,#dateOfBirthL {
+  font-size: larger;
+}
