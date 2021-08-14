@@ -8,11 +8,22 @@
   background-color: rgba(135, 206, 250, 0.8);
   margin: auto;
   padding: 10px;
-  box-shadow: 10px 0px 20px;
+  box-shadow: 10px 0 20px;
   width: fit-content;
   height: fit-content;
 }
 
 #firstNameL,#lastNameL,#dateOfBirthL {
   font-size: larger;
+}
+
+#b {
+  font-size: large;
+  border-radius: 50px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #004e64;
+  text-align: center;
+  background-color: rgba(135, 206, 250, 0.8);
+  box-shadow: 10px 0 20px;
 }
