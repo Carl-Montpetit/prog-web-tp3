@@ -19,8 +19,6 @@
     visibility: hidden;
   }
 
-  /* ================
-  Calendar Styling */
   .calendar, button {
     border-radius: 25px;
     border-style: solid;
