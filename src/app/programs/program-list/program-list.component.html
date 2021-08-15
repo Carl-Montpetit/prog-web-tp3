@@ -6,25 +6,30 @@
     programs">
       <div id="" class="col text-center justify-content-center">
         <!--TODO : It will be dynamic here-->
-        <h4 class="list-group-item-heading text-danger border border-primary w-50 text-center">{{ program.name }}
+        <h4
+          class="list-group-item-heading text-primary border border-dark w-50 text-center rounded-pill p-2 m-auto">{{
+          program.name }}
         </h4>
         <!--TODO : It will be dynamic here-->
-        <p class="font-weight-bolder">Description :</p>
-        <p class="list-group-item-text border border-dark p-2 text-left">{{ program.description }}</p>
-        <p class="font-weight-bolder">Activités :</p>
-        <p class="list-group-item-text border border-dark p-2 text-left">{{ program.activities }}</p>
-        <p class="font-weight-bolder">Horaire : <a class="btn-link" routerLink="/calendrier">Voir le calendrier</a></p>
-        <h3
-          class="list-group-item-text border border-dark w-25 text-center rounded-pill text-primary font-weight-bolder">{{
+        <h5 class="font-weight-bolder text-danger mt-3">Description :</h5>
+        <p class="list-group-item-text border border-dark rounded-pill p-3 text-left font-weight-bold m-auto">{{
+          program.description }}</p>
+        <h5 class="font-weight-bolder text-danger">Activités :</h5>
+        <p class="list-group-item-text border border-dark rounded-pill p-2 text-left font-weight-bold m-auto">{{
+          program.activities }}</p>
+        <h5 class="font-weight-bold text-dark">Horaire : <a class="btn-link" routerLink="/calendrier">Voir le
+          calendrier</a></h5>
+        <h2
+          class="list-group-item-text border border-dark w-25 text-center text-dark font-weight-bolder">{{
           program.price}}$
-        </h3>
+        </h2>
       </div>
       <div class="row">
         <div class="col-8 p-2">
-          <button class="btn btn-success border-dark text-dark text-center m-2 p-2 w-auto">Ajouter au panier</button>
-          <button class="btn btn-warning border-dark text-dark text-center m-2 p-2 w-auto">Modifier le programme
+          <button class="btn btn-success border-dark text-light font-weight-bolder text-center m-2 p-2 w-auto">Ajouter au panier</button>
+          <button class="btn btn-warning border-dark text-dark font-weight-bolder text-center m-2 p-2 w-auto">Modifier le programme
           </button>
-          <button class="btn btn-danger border-dark text-light text-center m-2 p-2 w">Supprimer le programme</button>
+          <button class="btn btn-danger border-dark text-light font-weight-bolder text-center m-2 p-2 w">Supprimer le programme</button>
         </div>
         <div class="col-4">
           <!--TODO : It will be dynamic here-->
