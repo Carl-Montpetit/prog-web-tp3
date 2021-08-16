@@ -1,5 +1,6 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, ClassProvider } from '@angular/core';
 import { LoginService } from "../../login/login.service";
+import { NgForm } from "@angular/forms";
 
 @Component({
   selector: 'app-create-account',
@@ -22,5 +23,9 @@ export class CreateAccountComponent implements OnInit {
     status: accountStatus
     });
     this.loggingService.logStatusChange(accountStatus);
+  }
+
+  onSubmit(form: NgForm) {
+    console.log(form);
   }
 }

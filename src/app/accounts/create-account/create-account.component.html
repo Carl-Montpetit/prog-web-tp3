@@ -7,7 +7,11 @@
   </div>
   <!--TODO : It will be dynamic here-->
   <div class="container text-center form-inline justify-content-center p-2">
-    <form id="a" class="form-group w-25 ">
+    <form
+      (ngSubmit)="onSubmit(f)"
+      #f="ngForm"
+      id="a"
+      class="form-group w-25 ">
       <div>
         <label
           class="font-weight-bold"
@@ -18,9 +22,14 @@
           type="text"
           id="firstName"
           class="form-control w-auto border border-dark"
+          ngModel
           name="firstName"
           placeholder="Entrez votre prénom"
-          required>
+          required
+          #fn="ngModel">
+        <p class="text-danger small" *ngIf="!fn.valid && fn.touched">
+          Svp, veuillez entrer un prénom valide!..
+        </p>
       </div>
       <div>
         <label
@@ -32,9 +41,14 @@
           type="text"
           id="lastName"
           class="form-control w-auto border border-dark"
+          ngModel
           name="lastName"
           placeholder="Entrez votre nom"
-          required>
+          required
+          #ln="ngModel">
+        <p class="text-danger small" *ngIf="!ln.valid && ln.touched">
+          Svp, veuillez entrer un nom de famille valide!..
+        </p>
       </div>
       <div>
         <label
@@ -46,8 +60,13 @@
           type="date"
           id="date"
           class="form-control w-auto text-center border border-dark"
+          ngModel
           name="date"
-          required>
+          required
+          #d="ngModel">
+        <p class="text-danger small" *ngIf="!d.valid && d.touched">
+          Svp, veuillez entrer une date valide!..
+        </p>
       </div>
       <div>
         <label
@@ -59,9 +78,15 @@
           type="email"
           id="email"
           class="form-control w-auto border border-dark"
+          ngModel
           name="email"
           placeholder="Entrez votre courriel"
-          required>
+          required
+          email
+          #e="ngModel">
+        <p class="text-danger small" *ngIf="!e.valid && e.touched">
+          Svp, veuillez entrer un courriel valide!..
+        </p>
       </div>
       <div>
         <label
@@ -73,25 +98,36 @@
           type="password"
           id="pw1"
           class="form-control w-auto border border-dark"
+          ngModel
           name="pw1"
           placeholder="Créer un mot de passe"
-          required>
+          required
+          #p1="ngModel">
+        <p class="text-danger small" *ngIf="!p1.valid && p1.touched">
+          Svp, veuillez entrer un mot de passe valide!..
+        </p>
       </div>
       <div>
         <input
           type="password"
           id="pw2"
           class="form-control w-auto border border-dark"
+          ngModel
           name="pw2"
           placeholder="Confirmez le mot de passe"
-          required>
+          required
+          #p2="ngModel">
+        <p class="text-danger small" *ngIf="!p2.valid && p2.touched">
+          Svp, veuillez entrer deux fois le même mot de passe!..
+        </p>
       </div>
       <div>
         <input
           class="form-control btn btn-success border-dark w-auto m-3"
           type="submit"
           name="submit"
-          value="Valider">
+          value="Valider"
+          [disabled]="!f.valid">
         <input
           id="cancel"
           class="form-control btn btn-danger border-dark w-auto m-3"

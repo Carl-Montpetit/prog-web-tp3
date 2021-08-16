@@ -21,3 +21,8 @@
   box-shadow: 10px 0px 20px;
   justify-content: center;
 }
+
+.text-danger {
+  font-size: small;
+  font-weight: bold;;
+}
