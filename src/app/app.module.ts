@@ -33,7 +33,6 @@ import { AccountsComponent } from './accounts/accounts.component';
 import { UsersComponent } from './users/users.component';
 import { CreateProgramComponent } from './programs/create-program/create-program.component';
 import { CreateSessionComponent } from './sessions/create-session/create-session.component';
-import { TypeComponent } from './activities/type/type.component';
 import { TypesComponent } from './activities/types/types.component';
 import { CreateTypeComponent } from './activities/types/create-type/create-type.component';
 
@@ -82,7 +81,6 @@ const appRoutes: Routes = [
     UsersComponent,
     CreateProgramComponent,
     CreateSessionComponent,
-    TypeComponent,
     TypesComponent,
     CreateTypeComponent,
   ],
