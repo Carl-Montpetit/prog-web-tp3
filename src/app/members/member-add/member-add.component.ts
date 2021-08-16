@@ -9,7 +9,7 @@ import { Validators } from '@angular/forms';
 })
 export class MemberAddComponent implements OnInit {
   newMemberForm = new FormGroup ({
-    firstName: new FormControl(''),
+    firstName: new FormControl('', Validators.required),
     lastName: new FormControl(''),
     dateOfBirth: new FormControl(''),
   });

@@ -2,7 +2,7 @@
   <div class="col-sm-12 align-items-center">
     <!--TODO : It will be dynamic here-->
     <div id="a" class="container list-group-item clearfix  m-2 border border-dark justify-content-center"
-         *ngFor="let program of programs">
+         *ngFor="let program of programService.getPrograms()">
       <div class="col text-center justify-content-center">
         <!--TODO : It will be dynamic here-->
         <h4

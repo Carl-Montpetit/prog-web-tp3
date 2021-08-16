@@ -14,7 +14,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { ErrorComponent } from './error/error.component';
 import { LoginComponent } from './login/login.component';
-import { CreateAccountComponent } from './create-account/create-account.component';
+import { CreateAccountComponent } from './accounts/create-account/create-account.component';
 import { JuneComponent } from './calendar/june/june.component';
 import { JulyComponent } from './calendar/july/july.component';
 import { AugustComponent } from './calendar/august/august.component';
@@ -25,9 +25,21 @@ import { MemberDeleteComponent } from './members/member-delete/member-delete.com
 import { SubscriptionsComponent } from './subscriptions/subscriptions.component';
 import { HistoryComponent } from './history/history.component';
 import { AdminComponent } from './admin/admin.component';
+import { ActivitiesComponent } from './activities/activities.component';
+import { CreateActivitiesBlocComponent } from './activities/create-activities-bloc/create-activities-bloc.component';
+import { CreateActivityComponent } from './activities/create-activity/create-activity.component';
+import { SessionsComponent } from './sessions/sessions.component';
+import { AccountsComponent } from './accounts/accounts.component';
+import { UsersComponent } from './users/users.component';
+import { CreateProgramComponent } from './programs/create-program/create-program.component';
+import { CreateSessionComponent } from './sessions/create-session/create-session.component';
+import { TypeComponent } from './activities/type/type.component';
+import { TypesComponent } from './activities/types/types.component';
+import { CreateTypeComponent } from './activities/types/create-type/create-type.component';
 
 const appRoutes: Routes = [
   { path: 'connection', component: LoginComponent },
+  { path: 'administrateur', component: AdminComponent},
   { path: 'inscriptions', component: SubscriptionsComponent },
   { path: 'historique', component: HistoryComponent },
   { path: 'membres', component: MembersComponent },
@@ -37,7 +49,6 @@ const appRoutes: Routes = [
   { path: 'panier', component: ShoppingListComponent },
   { path: '', component: MainComponent },
   { path: '**', component: ErrorComponent },
-
 ];
 
 @NgModule( {
@@ -63,6 +74,17 @@ const appRoutes: Routes = [
     SubscriptionsComponent,
     HistoryComponent,
     AdminComponent,
+    ActivitiesComponent,
+    CreateActivitiesBlocComponent,
+    CreateActivityComponent,
+    SessionsComponent,
+    AccountsComponent,
+    UsersComponent,
+    CreateProgramComponent,
+    CreateSessionComponent,
+    TypeComponent,
+    TypesComponent,
+    CreateTypeComponent,
   ],
   imports: [
     BrowserModule,
