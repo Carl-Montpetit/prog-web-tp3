@@ -7,14 +7,18 @@
   </div>
   <div class="row w-auto h-auto m-xlg-4 p-xl-4 justify-content-center">
     <div id="a" class="col-2 w-25 h-auto m-4 text-center">
-      <p class="display-4 mt-4 bg-success border text-dark border-dark rounded-pill w-auto h-auto p-2">
+      <p
+        class="display-4 mt-4 bg-success border text-dark border-dark rounded-pill w-auto h-auto p-2 row justify-content-center">
         Membres
       </p>
-      <!--TODO : It will be dynamic here-->
-      <form id="connectFormUser"
-            class="form-group m-2 p-2 w-auto h-auto"
-            method="post"
-            action="#">
+      <form
+        (ngSubmit)="onSubmit(fu)"
+        (submit)="onLoginUser()"
+        #fu="ngForm"
+        id="connectFormUser"
+        class="form-group m-2 p-2 w-auto h-auto m-auto"
+        method="post"
+        action="#">
         <label
           class="font-weight-bold text-center"
           for="emailUser">
@@ -24,9 +28,15 @@
           type="email"
           id="emailUser"
           class="form-control m-auto w-auto border border-dark"
+          ngModel
           name="email"
           placeholder="Entrez votre courriel"
-          required>
+          required
+          email
+          #eu="ngModel">
+        <p class="text-danger small" *ngIf="!eu.valid && eu.touched">
+          Svp, veuillez entrer un courriel valide!..
+        </p>
         <label
           class="font-weight-bold text-center"
           for="pwUser">
@@ -36,14 +46,20 @@
           type="password"
           id="pwUser"
           class="m-auto  form-control w-auto border border-dark"
+          ngModel
           name="pw"
           placeholder="Entrez votre mot de passe"
-          required>
+          required
+          #pu="ngModel">
+        <p class="text-danger small" *ngIf="!pu.valid && pu.touched">
+          Svp, veuillez entrer un mot de passe valide!..
+        </p>
         <input
           class="form-control btn btn-success border border-dark w-auto text-light mt-3 mr-2"
           type="submit"
           name="submitUser"
-          value="Se Connecter">
+          value="Se Connecter"
+          [disabled]="!fu.valid">
         <input
           id="cancelUser"
           class="form-control btn btn-danger border border-dark w-auto text-light mt-3 ml-2"
@@ -52,11 +68,13 @@
       </form>
     </div>
     <div id="b" class="col-2 w-25 h-auto m-4 text-center">
-      <p class="display-4 mt-4 bg-warning border text-dark border-dark rounded-pill w-auto h-auto p-2">
+      <p class="display-4 mt-4 bg-warning border text-dark border-dark rounded-pill w-auto h-auto p-2 row justify-content-center">
         Employés
       </p>
-      <!--TODO : It will be dynamic here-->
       <form
+        (ngSubmit)="onSubmit(fa)"
+        (submit)="onLoginAdmin()"
+        #fa="ngForm"
         id="connectFormAdmin"
         class="form-group m-2 p-2 w-auto h-auto"
         method="post"
@@ -70,9 +88,15 @@
           type="email"
           id="emailAdmin"
           class="form-control m-auto w-auto border border-dark"
+          ngModel
           name="email"
           placeholder="Entrez votre courriel"
-          required>
+          required
+          email
+          #ea="ngModel">
+        <p class="text-danger small" *ngIf="!ea.valid && ea.touched && ea.value !== 'admin@admin'">
+          Svp, veuillez entrer un courriel valide!..
+        </p>
         <label
           class="font-weight-bold text-center"
           for="pwAdmin">
@@ -82,14 +106,20 @@
           type="password"
           id="pwAdmin"
           class="m-auto  form-control w-auto border border-dark"
+          ngModel
           name="pw"
           placeholder="Entrez votre mot de passe"
-          required>
+          required
+          #pa="ngModel">
+        <p class="text-danger small" *ngIf="!pa.valid && pa.touched && pa.value !== 'admin'">
+          Svp, veuillez entrer un mot de passe valide!..
+        </p>
         <input
           class="form-control btn btn-success border border-dark w-auto text-light mt-3 mr-2"
           type="submit"
           name="submitAdmin"
-          value="Se Connecter">
+          value="Se Connecter"
+          [disabled]="!fa.valid">
         <input
           id="cancelAdmin"
           class="form-control btn btn-danger border border-dark w-auto text-light mt-3 ml-2"

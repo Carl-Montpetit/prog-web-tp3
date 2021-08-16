@@ -4,12 +4,20 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 } )
 export class LoginService {
-  status: boolean = false; // account status by default ⟹ false = logout
+  // account status by default ⟹ false = logout
+  statusAdmin: boolean = false;
+  statusUser: boolean = false;
 
   constructor() {
   }
 
-  logStatusChange( status: string ) {
-    console.log( 'Le status du compte a changé, nouveau status: ' + status )
+  logStatusAdminChange() {
+    this.statusAdmin = !this.statusAdmin;
+    console.log( 'Le status du compte a changé, nouveau status: ' + this.statusAdmin )
+  }
+
+  logStatusUserChange() {
+    this.statusUser = !this.statusUser;
+    console.log( 'Le status du compte a changé, nouveau status: ' + this.statusUser )
   }
 }
