@@ -26,3 +26,7 @@
 #emailUser, #emailAdmin {
   text-align: center;
 }
+
+#members, #employes{
+  font-size: xx-large;
+}

@@ -7,8 +7,8 @@
   </div>
   <div class="row w-auto h-auto m-xlg-4 p-xl-4 justify-content-center">
     <div id="a" class="col-2 w-25 h-auto m-4 text-center">
-      <p
-        class="display-4 mt-4 bg-success border text-dark border-dark rounded-pill w-auto h-auto p-2 row justify-content-center">
+      <p id="members"
+        class="col-md-12 mx-auto mt-4 bg-success border text-dark border-dark rounded-pill w-auto h-auto p-2 row justify-content-center">
         Membres
       </p>
       <form
@@ -27,7 +27,7 @@
         <input
           type="email"
           id="emailUser"
-          class="form-control m-auto w-auto border border-dark"
+          class="col-md-12 form-control m-auto w-auto border border-dark"
           ngModel
           name="email"
           placeholder="Entrez votre courriel"
@@ -45,7 +45,7 @@
         <input
           type="password"
           id="pwUser"
-          class="m-auto  form-control w-auto border border-dark"
+          class="col-md-12 m-auto  form-control w-auto border border-dark"
           ngModel
           name="pw"
           placeholder="Entrez votre mot de passe"
@@ -55,20 +55,21 @@
           Svp, veuillez entrer un mot de passe valide!..
         </p>
         <input
-          class="form-control btn btn-success border border-dark w-auto text-light mt-3 mr-2"
+          class="col-md-12 mx-1 form-control btn btn-success border border-dark w-auto text-light mt-3 mr-2"
           type="submit"
           name="submitUser"
           value="Se Connecter"
           [disabled]="!fu.valid">
         <input
           id="cancelUser"
-          class="form-control btn btn-danger border border-dark w-auto text-light mt-3 ml-2"
+          class="col-md-12 mx-1 form-control btn btn-danger border border-dark w-auto text-light mt-3 ml-2"
           type="reset"
           value="Annuler">
       </form>
     </div>
     <div id="b" class="col-2 w-25 h-auto m-4 text-center">
-      <p class="display-4 mt-4 bg-warning border text-dark border-dark rounded-pill w-auto h-auto p-2 row justify-content-center">
+      <p id="employes"
+        class="col-md-12 mx-auto mt-4 bg-warning border text-dark border-dark rounded-pill w-auto h-auto p-2 row justify-content-center">
         Employés
       </p>
       <form
@@ -87,7 +88,7 @@
         <input
           type="email"
           id="emailAdmin"
-          class="form-control m-auto w-auto border border-dark"
+          class="col-md-12 form-control m-auto w-auto border border-dark"
           ngModel
           name="email"
           placeholder="Entrez votre courriel"
@@ -105,7 +106,7 @@
         <input
           type="password"
           id="pwAdmin"
-          class="m-auto  form-control w-auto border border-dark"
+          class="col-md-12 m-auto form-control w-auto border border-dark"
           ngModel
           name="pw"
           placeholder="Entrez votre mot de passe"
@@ -115,14 +116,14 @@
           Svp, veuillez entrer un mot de passe valide!..
         </p>
         <input
-          class="form-control btn btn-success border border-dark w-auto text-light mt-3 mr-2"
+          class="col-md-12 mx-1 form-control btn btn-success border border-dark w-auto text-light mt-3 mr-2"
           type="submit"
           name="submitAdmin"
           value="Se Connecter"
           [disabled]="!fa.valid">
         <input
           id="cancelAdmin"
-          class="form-control btn btn-danger border border-dark w-auto text-light mt-3 ml-2"
+          class="col-md-12 mx-1 form-control btn btn-danger border border-dark w-auto text-light mt-3 ml-2"
           type="reset"
           value="Annuler">
       </form>
