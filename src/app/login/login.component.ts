@@ -6,7 +6,6 @@ import { NgForm } from "@angular/forms";
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: [ './login.component.css' ],
-  providers: [ LoginService ],
 } )
 export class LoginComponent implements OnInit {
   @ViewChild( 'fu' ) loginUserForm: NgForm;
@@ -37,14 +36,14 @@ export class LoginComponent implements OnInit {
    * Switch the status to true if a user is logged in
    */
   onLoginUser() {
-    this.loggingService.logStatusUserChange();
+    this.loggingService.onLoginUserService();
   }
 
   /**
    * Switch the status to true if the admin is logged in
    */
   onLoginAdmin() {
-    this.loggingService.logStatusAdminChange();
+    this.loggingService.onLoginAdminService();
   }
 
   /**

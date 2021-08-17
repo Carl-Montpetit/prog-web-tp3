@@ -1,26 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { LoginService } from "../login/login.service";
 
 @Component( {
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: [ './header.component.css' ],
-  providers: [LoginService],
 } )
-export class HeaderComponent implements OnInit {
 
-  constructor(public loggingService: LoginService) {
+export class HeaderComponent implements OnInit {
+  static userStatus: boolean;
+  static adminStatus: boolean;
+
+  constructor( private _loggingService: LoginService ) {
   }
 
   ngOnInit() {
   }
 
-  // Getters for the status of user & admin
-  getUserStatus() {
-    return this.loggingService.getLoggingStatusUser()
+  getUserStatus(): boolean {
+    HeaderComponent.userStatus = this._loggingService.getLoggingStatusUser();
+    return HeaderComponent.userStatus;
   }
 
-  getAdminStatus() {
-    return this.loggingService.logStatusAdminChange()
+  getAdminStatus(): boolean {
+    HeaderComponent.adminStatus = this._loggingService.getLoggingStatusAdmin();
+    return HeaderComponent.adminStatus;
+  }
+
+  setUserStatusOff(): void {
+    HeaderComponent.userStatus = false;
+  }
+
+  setAdminStatusOff(): void {
+    HeaderComponent.adminStatus = false;
   }
 }

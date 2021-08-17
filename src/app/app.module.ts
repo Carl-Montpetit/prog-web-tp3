@@ -29,12 +29,12 @@ import { CreateActivitiesBlocComponent } from './activities/create-activities-bl
 import { CreateActivityComponent } from './activities/create-activity/create-activity.component';
 import { SessionsComponent } from './sessions/sessions.component';
 import { AccountsComponent } from './accounts/accounts.component';
-import { UsersComponent } from './users/users.component';
 import { CreateProgramComponent } from './programs/create-program/create-program.component';
 import { CreateSessionComponent } from './sessions/create-session/create-session.component';
 import { TypesComponent } from './activities/types/types.component';
 import { CreateTypeComponent } from './activities/types/create-type/create-type.component';
 import { LogoutComponent } from './logout/logout.component';
+import { LoginService } from "./login/login.service";
 
 const appRoutes: Routes = [
   { path: 'connection', component: LoginComponent },
@@ -78,7 +78,6 @@ const appRoutes: Routes = [
     CreateActivityComponent,
     SessionsComponent,
     AccountsComponent,
-    UsersComponent,
     CreateProgramComponent,
     CreateSessionComponent,
     TypesComponent,
@@ -89,10 +88,11 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot( appRoutes )
   ],
   exports: [ RouterModule ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [ AppComponent ]
 } )
 export class AppModule {

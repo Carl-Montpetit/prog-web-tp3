@@ -51,7 +51,8 @@
           placeholder="Entrez votre mot de passe"
           required
           #pu="ngModel">
-        <p class="text-danger small" *ngIf="!pu.valid && pu.touched">
+        <p class="text-danger small" *ngIf="!pu.valid && pu.touched && !(pu.value.length >= 3 && pu.value.length <=
+        20)">
           Svp, veuillez entrer un mot de passe valide!..
         </p>
         <input

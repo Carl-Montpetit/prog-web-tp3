@@ -22,7 +22,7 @@ export class CreateAccountComponent implements OnInit {
     name: accountName,
     status: accountStatus
     });
-    this.loggingService.logStatusUserChange();
+    this.loggingService.onLoginUserService();
   }
 
   onSubmit(form: NgForm) {
