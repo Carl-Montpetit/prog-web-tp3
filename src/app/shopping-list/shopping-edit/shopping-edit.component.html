@@ -1,44 +1,18 @@
 <div id="a" class="w-50 p-5">
   <p class="display-4 text-center m-0 p-2 border border-dark bg-success text-dark">Votre Panier : 🛒</p>
-  <ul id="tab" class="list-group border border-light m-auto">
+  <ul id="tab" class="list-group border border-light m-auto" *ngFor="let shoppingItem of programService.getShoppingCart()">
     <li class="list-group-item d-flex justify-content-between lh-condensed">
       <div>
       <!--TODO : It is going to be dynamic-->
-        <h5 class="text-secondary font-weight-bold">Le Classique</h5>
-        <h5 class="text-info font-weight-bold">Steve</h5>
+        <h5 class="text-secondary font-weight-bold">{{shoppingItem.name}}</h5>
+        <h5 class="text-info font-weight-bold">{{shoppingItem.kidSubscribed}}</h5>
         <button
           class="btn btn-danger"
           type="button">
           Enlever du panier
         </button>
       </div>
-      <h5 class="text-success font-weight-bold">100$</h5>
-    </li>
-    <li class="list-group-item d-flex justify-content-between lh-condensed">
-      <div>
-        <!--TODO : It is going to be dynamic-->
-        <h5 class="text-secondary font-weight-bold">Art & Science</h5>
-        <h5 class="text-info font-weight-bold">Alyssa</h5>
-        <button
-          class="btn btn-danger"
-          type="button">
-          Enlever du panier
-        </button>
-      </div>
-      <h5 class="text-success font-weight-bold">150$</h5>
-    </li>
-    <li class="list-group-item d-flex justify-content-between lh-condensed">
-      <div>
-        <!--TODO : It is going to be dynamic-->
-        <h5 class="text-secondary font-weight-bold">L'enfant Actif</h5>
-        <h5 class="text-info font-weight-bold">Mélodie</h5>
-        <button
-          class="btn btn-danger"
-          type="button">
-          Enlever du panier
-        </button>
-      </div>
-      <h5 class="text-success font-weight-bold">135$</h5>
+      <h5 class="text-success font-weight-bold">{{shoppingItem.price}}$</h5>
     </li>
     <!--TODO : It is going to be dynamic-->
     <li class="list-group-item d-flex justify-content-between">

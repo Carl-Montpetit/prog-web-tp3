@@ -5,3 +5,7 @@ export class Program {
                public kidsSubscribed: string[], public blocActivities: string[], public activities: string[],
                public price: number , public imagePath: string ) {}
 }
+
+export class ShoppingItem {
+  constructor( public name: string, public kidSubscribed: string, public price: number) {}
+}

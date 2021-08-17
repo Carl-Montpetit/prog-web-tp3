@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Program } from "./program-model";
+import { ShoppingItem } from './program-model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,9 +24,20 @@ export class ProgramsService {
       135, 'https://cdn.cdnparenting.com/articles/2018/03/72136312-H.webp' ),
   ];
 
+  public shoppingList = [new ShoppingItem('addedProgram', 'Kid\'s name', 2)];
+
   constructor() {}
 
   getPrograms() {
     return this.programs;
+  }
+
+  getShoppingCart() {
+    return this.shoppingList;
+  }
+
+  testAffiche() {
+    this.shoppingList.push(new ShoppingItem('acb', 'zyx', 55));
+    console.log("lmnop");
   }
 }

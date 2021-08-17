@@ -24,12 +24,12 @@
         </h5>
         <h2
           class="list-group-item-text border border-dark w-25 text-center text-dark font-weight-bolder">
-          {{ program.price}}$
+          {{ program.price }}$
         </h2>
       </div>
       <div class="row">
         <div class="col-8 p-2">
-          <button
+          <button (click)="programService.testAffiche()"
             class="btn btn-success border-dark text-light font-weight-bolder text-center m-2 p-2 w-auto">
             Ajouter au panier
           </button>
