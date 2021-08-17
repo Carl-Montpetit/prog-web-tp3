@@ -45,4 +45,10 @@ export class ProgramsService {
   getTotalPrice() {
     return ProgramsService.totalPrice;
   }
+
+  removeFromCart(program, price) {
+    let index = ProgramsService.shoppingList.indexOf(program)
+    ProgramsService.shoppingList.splice(index, 1)
+    ProgramsService.totalPrice = ProgramsService.totalPrice - price;
+  }
 }
