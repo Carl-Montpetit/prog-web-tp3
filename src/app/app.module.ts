@@ -18,12 +18,11 @@ import { JuneComponent } from './calendar/june/june.component';
 import { JulyComponent } from './calendar/july/july.component';
 import { AugustComponent } from './calendar/august/august.component';
 import { ShoppingPayComponent } from './shopping-list/shopping-pay/shopping-pay.component';
-import { MembersComponent } from './members/members.component';
-import { MemberAddComponent } from './members/member-add/member-add.component';
-import { MemberDeleteComponent } from './members/member-delete/member-delete.component';
+import { MembersComponent } from './accounts/members/members.component';
+import { MemberAddComponent } from './accounts/members/member-add/member-add.component';
+import { MemberDeleteComponent } from './accounts/members/member-delete/member-delete.component';
 import { SubscriptionsComponent } from './subscriptions/subscriptions.component';
-import { HistoryComponent } from './history/history.component';
-import { AdminComponent } from './admin/admin.component';
+import { HistoryComponent } from './accounts/history/history.component';
 import { ActivitiesComponent } from './activities/activities.component';
 import { CreateActivitiesBlocComponent } from './activities/create-activities-bloc/create-activities-bloc.component';
 import { CreateActivityComponent } from './activities/create-activity/create-activity.component';
@@ -33,12 +32,11 @@ import { CreateProgramComponent } from './programs/create-program/create-program
 import { CreateSessionComponent } from './sessions/create-session/create-session.component';
 import { TypesComponent } from './activities/types/types.component';
 import { CreateTypeComponent } from './activities/types/create-type/create-type.component';
-import { LogoutComponent } from './logout/logout.component';
 import { LoginService } from "./login/login.service";
+import { AdminComponent } from './admin/admin.component';
 
 const appRoutes: Routes = [
   { path: 'connection', component: LoginComponent },
-  { path: 'administrateur', component: AdminComponent},
   { path: 'inscriptions', component: SubscriptionsComponent },
   { path: 'historique', component: HistoryComponent },
   { path: 'membres', component: MembersComponent },
@@ -72,7 +70,6 @@ const appRoutes: Routes = [
     MemberDeleteComponent,
     SubscriptionsComponent,
     HistoryComponent,
-    AdminComponent,
     ActivitiesComponent,
     CreateActivitiesBlocComponent,
     CreateActivityComponent,
@@ -82,7 +79,7 @@ const appRoutes: Routes = [
     CreateSessionComponent,
     TypesComponent,
     CreateTypeComponent,
-    LogoutComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -92,7 +89,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot( appRoutes )
   ],
   exports: [ RouterModule ],
-  providers: [LoginService],
+  providers: [ LoginService ],
   bootstrap: [ AppComponent ]
 } )
 export class AppModule {
