@@ -24,7 +24,8 @@ export class ProgramsService {
       135, 'https://cdn.cdnparenting.com/articles/2018/03/72136312-H.webp' ),
   ];
 
-  public shoppingList = [new ShoppingItem('addedProgram', 'Kid\'s name', 2)];
+  static shoppingList = [];
+  static totalPrice = 0;
 
   constructor() {}
 
@@ -33,11 +34,15 @@ export class ProgramsService {
   }
 
   getShoppingCart() {
-    return this.shoppingList;
+    return ProgramsService.shoppingList;
   }
 
-  testAffiche() {
-    this.shoppingList.push(new ShoppingItem('acb', 'zyx', 55));
-    console.log("lmnop");
+  addToCart(programName, programPrice) {
+    ProgramsService.shoppingList.push(new ShoppingItem(programName, 'kid\'s name', programPrice));
+    ProgramsService.totalPrice = ProgramsService.totalPrice + programPrice;
+  }
+
+  getTotalPrice() {
+    return ProgramsService.totalPrice;
   }
 }

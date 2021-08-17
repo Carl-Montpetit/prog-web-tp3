@@ -1,6 +1,7 @@
 <div id="a" class="w-50 p-5">
   <p class="display-4 text-center m-0 p-2 border border-dark bg-success text-dark">Votre Panier : 🛒</p>
-  <ul id="tab" class="list-group border border-light m-auto" *ngFor="let shoppingItem of programService.getShoppingCart()">
+  <ul id="tab" class="list-group border border-light m-auto"
+    *ngFor="let shoppingItem of programService.getShoppingCart()">
     <li class="list-group-item d-flex justify-content-between lh-condensed">
       <div>
       <!--TODO : It is going to be dynamic-->
@@ -15,9 +16,9 @@
       <h5 class="text-success font-weight-bold">{{shoppingItem.price}}$</h5>
     </li>
     <!--TODO : It is going to be dynamic-->
-    <li class="list-group-item d-flex justify-content-between">
-      <h2 class="font-weight-bolder">Total : </h2>
-      <h2 class="text-primary font-weight-bolder">385$</h2>
-    </li>
   </ul>
+  <li class="list-group-item d-flex justify-content-between">
+    <h2 class="font-weight-bolder">Total : </h2>
+    <h2 class="text-primary font-weight-bolder">{{programService.getTotalPrice()}}$</h2>
+  </li>
 </div>
