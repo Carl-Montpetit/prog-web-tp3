@@ -38,6 +38,7 @@
             </a>
           </li>
           <li
+            *ngIf="this.getUserStatus() == true"
             class="nav-item btn btn-primary"
             routerLinkActive="active">
             <a

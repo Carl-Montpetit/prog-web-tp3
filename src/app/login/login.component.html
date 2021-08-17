@@ -12,7 +12,7 @@
         Membres
       </p>
       <form
-        (ngSubmit)="onSubmit(fu)"
+        (ngSubmit)="onSubmitUser(fu)"
         (submit)="onLoginUser()"
         #fu="ngForm"
         id="connectFormUser"
@@ -72,7 +72,7 @@
         Employés
       </p>
       <form
-        (ngSubmit)="onSubmit(fa)"
+        (ngSubmit)="onSubmitAdmin(fa)"
         (submit)="onLoginAdmin()"
         #fa="ngForm"
         id="connectFormAdmin"

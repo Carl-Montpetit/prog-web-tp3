@@ -8,18 +8,19 @@ import { LoginService } from "../login/login.service";
   providers: [LoginService],
 } )
 export class HeaderComponent implements OnInit {
-  // Declarations of the fields of the class
-  adminLoggedIn: boolean
-  userLoggedIn: boolean
-  loggedIn: boolean
 
-  // how the object is initialized ⟹ empty by default
-  constructor() {
+  constructor(public loggingService: LoginService) {
   }
 
-  // Angulare special
-  ngOnInit(): void {
+  ngOnInit() {
   }
-  // we add functions here ⇩
 
+  // Getters for the status of user & admin
+  getUserStatus() {
+    return this.loggingService.getLoggingStatusUser()
+  }
+
+  getAdminStatus() {
+    return this.loggingService.logStatusAdminChange()
+  }
 }
