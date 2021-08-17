@@ -1,4 +1,4 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit, ViewChild, OnChanges, SimpleChanges } from '@angular/core';
 import { LoginService } from "../login/login.service";
 
 @Component( {
@@ -7,14 +7,17 @@ import { LoginService } from "../login/login.service";
   styleUrls: [ './header.component.css' ],
 } )
 
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnChanges {
   static userStatus: boolean;
   static adminStatus: boolean;
 
   constructor( private _loggingService: LoginService ) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+  }
+
+  ngOnChanges( changes: SimpleChanges ) {
   }
 
   getUserStatus(): boolean {
@@ -27,11 +30,9 @@ export class HeaderComponent implements OnInit {
     return HeaderComponent.adminStatus;
   }
 
-  setUserStatusOff(): void {
-    HeaderComponent.userStatus = false;
-  }
-
-  setAdminStatusOff(): void {
-    HeaderComponent.adminStatus = false;
+  setStatusOff(): void {
+    this._loggingService.onLogoutUserService();
+    this._loggingService.onLogoutAdminService();
+    alert("Vous êtes maintenant déconnecté!");
   }
 }

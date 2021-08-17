@@ -73,26 +73,6 @@
           </a>
         </li>
         <li
-          *ngIf="!getUserStatus() || !getAdminStatus()"
-          class="nav-item btn btn-primary"
-          routerLinkActive="active">
-          <a
-            class="nav-link bg-light text-dark border border-dark rounded-pill"
-            routerLink="connection">
-            🔌Se connecter
-          </a>
-        </li>
-        <li
-          *ngIf="getUserStatus() || getAdminStatus()"
-          class="nav-item btn btn-primary"
-        >
-          <a
-            class="nav-link bg-light text-dark border border-dark rounded-pill"
-            (click)="setUserStatusOff()">
-            ❌Se déconnecter
-          </a>
-        </li>
-        <li
           *ngIf="!getUserStatus || !getAdminStatus()"
           class="nav-item btn btn-primary"
           routerLinkActive="active">
@@ -110,6 +90,25 @@
             class="nav-link bg-light text-dark border border-dark rounded-pill"
             routerLink="membres">
             👩‍👧‍👦Gérer les membres
+          </a>
+        </li>
+        <li
+          *ngIf="getUserStatus() == false && getAdminStatus() == false"
+          class="nav-item btn btn-primary"
+          routerLinkActive="active">
+          <a
+            class="nav-link bg-light text-dark border border-dark rounded-pill"
+            routerLink="connection">
+            🔌Se connecter
+          </a>
+        </li>
+        <li
+          *ngIf="getUserStatus() || getAdminStatus()"
+          class="nav-item btn btn-primary">
+          <a
+            class="nav-link bg-light text-dark border border-dark rounded-pill"
+            (click)="setStatusOff()">
+            ❌Se déconnecter
           </a>
         </li>
         <li

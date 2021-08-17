@@ -18,6 +18,15 @@ export class LoginService {
    */
   onLoginUserService() {
     LoginService.statusUser = true;
+    alert("Bonjour, vous êtes maintenant connecté en tant qu'utilisateur!..");
+    console.log( 'Le status du compte utilsiateur a changé, nouveau status: ' + LoginService.statusUser );
+  }
+
+  /**
+   * switch the status of the user (logged in ⇋ logged out)
+   */
+  onLogoutUserService() {
+    LoginService.statusUser = false;
     console.log( 'Le status du compte utilsiateur a changé, nouveau status: ' + LoginService.statusUser );
   }
 
@@ -26,6 +35,15 @@ export class LoginService {
    */
   onLoginAdminService() {
     LoginService.statusAdmin = true;
+    alert("Bonjour, vous êtes maintenant connecté en tant qu'administrateur!..");
+    console.log( 'Le status du compte admin a changé, nouveau status: ' + LoginService.statusAdmin );
+  }
+
+  /**
+   * switch the status of the Admin (logged in ⇋ logged out)
+   */
+  onLogoutAdminService() {
+    LoginService.statusAdmin = false;
     console.log( 'Le status du compte admin a changé, nouveau status: ' + LoginService.statusAdmin );
   }
 
