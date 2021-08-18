@@ -73,7 +73,7 @@
           </a>
         </li>
         <li
-          *ngIf="!getUserStatus || !getAdminStatus()"
+          *ngIf="getUserStatus() == false && getAdminStatus() == false"
           class="nav-item btn btn-primary"
           routerLinkActive="active">
           <a
