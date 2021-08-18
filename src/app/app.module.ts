@@ -1,3 +1,7 @@
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
@@ -34,6 +38,7 @@ import { TypesComponent } from './activities/types/types.component';
 import { CreateTypeComponent } from './activities/types/create-type/create-type.component';
 import { LoginService } from "./login/login.service";
 import { AdminComponent } from './admin/admin.component';
+import { PopupComponent } from './popup/popup.component';
 
 const appRoutes: Routes = [
   { path: 'connection', component: LoginComponent },
@@ -80,10 +85,15 @@ const appRoutes: Routes = [
     TypesComponent,
     CreateTypeComponent,
     AdminComponent,
+    PopupComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatFormFieldModule,
     ReactiveFormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot( appRoutes )

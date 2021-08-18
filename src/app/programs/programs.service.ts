@@ -1,6 +1,8 @@
+import { PopupComponent } from './../popup/popup.component';
 import { Injectable } from '@angular/core';
 import { Program } from "./program-model";
 import { ShoppingItem } from './program-model';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +29,7 @@ export class ProgramsService {
   static shoppingList = [];
   static totalPrice = 0;
 
-  constructor() {}
+  constructor(private dialog: MatDialog) {}
 
   getPrograms() {
     return this.programs;
@@ -50,5 +52,15 @@ export class ProgramsService {
     let index = ProgramsService.shoppingList.indexOf(program)
     ProgramsService.shoppingList.splice(index, 1)
     ProgramsService.totalPrice = ProgramsService.totalPrice - price;
+  }
+
+  selectChildPopup() {
+    const dialogConfig = new MatDialogConfig();
+
+    // dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(PopupComponent, dialogConfig);
+    
   }
 }
