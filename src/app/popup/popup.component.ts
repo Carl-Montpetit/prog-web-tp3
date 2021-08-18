@@ -9,6 +9,7 @@ import { MembersService } from '../accounts/members/members.service';
   styleUrls: ['./popup.component.css']
 })
 export class PopupComponent implements OnInit {
+  public selectedChild = '';
 
   constructor(
     public programService: ProgramsService,
@@ -17,6 +18,10 @@ export class PopupComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any) {}
 
   ngOnInit(): void {
+  }
+
+  selectChangeHandler (event: any) {
+    this.selectedChild = event.target.value;
   }
   
   closePopup() {

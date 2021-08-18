@@ -1,17 +1,18 @@
 <h1>Choisissez votre enfant</h1>
-
+<mat-dialog-content>
 <mat-form-field appearance="fill">
-    <select matNativeControl required>
-        <option class="h5" *ngFor="let child of memberService.getChildren()">
+    <select (change)="selectChangeHandler($event)" [(ngModel)]="selectedChild" matNativeControl>
+        <option id="childChosen" class="h5" [value]="child.firstName"
+        *ngFor="let child of memberService.getChildren()">
             {{child.firstName}}
         </option>
     </select>
 </mat-form-field>
+</mat-dialog-content>
 <mat-dialog-actions class="justify-content-center">
-    <input 
+    <button [mat-dialog-close]="selectedChild"
         class="mx-1 form-control btn btn-success border border-dark w-auto text-light mt-3 mr-2"
-        type="submit"
-        value="Je confirme">
+        >Je confirme</button>
     <input (click)="closePopup()"
         id="cancelUser"
         class="mx-1 form-control btn btn-danger border border-dark w-auto text-light mt-3 ml-2"

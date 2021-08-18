@@ -39,8 +39,8 @@ export class ProgramsService {
     return ProgramsService.shoppingList;
   }
 
-  addToCart(programName, programPrice) {
-    ProgramsService.shoppingList.push(new ShoppingItem(programName, 'kid\'s name', programPrice));
+  addToCart(programName,child, programPrice) {
+    ProgramsService.shoppingList.push(new ShoppingItem(programName, child, programPrice));
     ProgramsService.totalPrice = ProgramsService.totalPrice + programPrice;
   }
 
@@ -54,7 +54,7 @@ export class ProgramsService {
     ProgramsService.totalPrice = ProgramsService.totalPrice - price;
   }
 
-  selectChildPopup() {
+  selectChildPopup(programName, programPrice) {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;
@@ -63,7 +63,8 @@ export class ProgramsService {
     this.dialog.open(PopupComponent, dialogConfig)
     
     .afterClosed()
-      console.log("eeek");
-    
+    .subscribe(childSelected => {
+      if (childSelected) {this.addToCart(programName, childSelected, programPrice);}
+    });
   }
 }
