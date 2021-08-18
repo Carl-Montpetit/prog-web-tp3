@@ -57,10 +57,13 @@ export class ProgramsService {
   selectChildPopup() {
     const dialogConfig = new MatDialogConfig();
 
-    // dialogConfig.disableClose = true;
+    dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
-    this.dialog.open(PopupComponent, dialogConfig);
+    this.dialog.open(PopupComponent, dialogConfig)
+    
+    .afterClosed()
+      console.log("eeek");
     
   }
 }

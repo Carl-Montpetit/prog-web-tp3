@@ -1,3 +1,4 @@
+import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -91,6 +92,7 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatInputModule,
     MatDialogModule,
     MatButtonModule,
     MatFormFieldModule,
@@ -98,7 +100,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot( appRoutes )
   ],
-  exports: [ RouterModule ],
+  exports: [ RouterModule, MatInputModule ],
   providers: [ LoginService ],
   bootstrap: [ AppComponent ]
 } )

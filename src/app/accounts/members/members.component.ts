@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MemberModel } from "./member-model";
+import { Children } from "./member-model";
 
 @Component( {
   selector: 'app-members',
@@ -9,8 +9,8 @@ import { MemberModel } from "./member-model";
 export class MembersComponent implements OnInit {
   // Members est un ensemble (array) d'objects member
   members = [
-    new MemberModel( 'Patrick', 'Lafontaine', '08-06-2015' ),
-    new MemberModel('Patricia', 'Carrière', '22-03-2010'),
+    new Children( 'Patrick', 'Lafontaine', '08-06-2015' ),
+    new Children('Patricia', 'Carrière', '22-03-2010'),
   ]
 
   constructor() {
