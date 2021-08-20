@@ -8,6 +8,7 @@ export class LoginService {
   // private : to make the fields reachable from the inside of the class only
   static statusUser: boolean = false;
   static statusAdmin: boolean = false;
+  static isValidated: boolean = false;
 
   // empty constructor
   constructor() {
@@ -18,7 +19,7 @@ export class LoginService {
    */
   onLoginUserService() {
     LoginService.statusUser = true;
-    alert("Bonjour, vous êtes maintenant connecté en tant qu'utilisateur!..");
+    alert("Bienvenu, vous êtes maintenant connecté en tant qu'utilisateur!..");
     console.log( 'Le status du compte utilsiateur a changé, nouveau status: ' + LoginService.statusUser );
   }
 
@@ -26,8 +27,16 @@ export class LoginService {
    * switch the status of the user (logged in ⇋ logged out)
    */
   onLogoutUserService() {
-    LoginService.statusUser = false;
-    console.log( 'Le status du compte utilsiateur a changé, nouveau status: ' + LoginService.statusUser );
+    LoginService.isValidated = confirm('Êtes-vous certain de vouloir vous déconnecter?..');
+    if (!this.getLogoutValidation()) {
+      LoginService.statusUser = true;
+      alert('La déconnection a été cancelée!..');
+    }
+    else {
+      LoginService.statusUser = false;
+      alert("Vous êtes maintenant déconnecté!");
+    }
+    console.log( 'Le status du compte admin a changé, nouveau status: ' + LoginService.statusUser );
   }
 
   /**
@@ -35,7 +44,7 @@ export class LoginService {
    */
   onLoginAdminService() {
     LoginService.statusAdmin = true;
-    alert("Bonjour, vous êtes maintenant connecté en tant qu'administrateur!..");
+    alert("Bienvenu, vous êtes maintenant connecté en tant qu'administrateur!..");
     console.log( 'Le status du compte admin a changé, nouveau status: ' + LoginService.statusAdmin );
   }
 
@@ -43,7 +52,15 @@ export class LoginService {
    * switch the status of the Admin (logged in ⇋ logged out)
    */
   onLogoutAdminService() {
-    LoginService.statusAdmin = false;
+    LoginService.isValidated = confirm('Êtes-vous certain de vouloir vous déconnecter?..');
+    if (!this.getLogoutValidation()) {
+      LoginService.statusAdmin = true;
+      alert('La déconnection a été cancelée!..');
+    }
+    else {
+      LoginService.statusAdmin = false;
+      alert("Vous êtes maintenant déconnecté!");
+    }
     console.log( 'Le status du compte admin a changé, nouveau status: ' + LoginService.statusAdmin );
   }
 
@@ -55,5 +72,9 @@ export class LoginService {
   }
   getLoggingStatusAdmin() {
     return LoginService.statusAdmin;
+  }
+
+  getLogoutValidation() {
+    return LoginService.isValidated;
   }
 }

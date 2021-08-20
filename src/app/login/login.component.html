@@ -20,7 +20,7 @@
         method="post"
         action="#">
         <label
-          class="font-weight-bold text-center"
+          class="font-weight-bold text-center\"
           for="emailUser">
           Courriel :
         </label>
@@ -51,8 +51,7 @@
           placeholder="Entrez votre mot de passe"
           required
           #pu="ngModel">
-        <p class="text-danger small" *ngIf="(!pu.valid && pu.touched) || (pu.value.toString().length < 3 ||
-        pu.value.toString().length > 15)">
+        <p class="text-danger small" *ngIf="(!pu.valid && pu.touched)">
           Svp, veuillez entrer un mot de passe valide!..
         </p>
         <input

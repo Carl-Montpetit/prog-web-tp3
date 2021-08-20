@@ -31,10 +31,10 @@ export class CreateAccountComponent implements OnInit {
   onSubmit(form: NgForm): void {
     this.account.firstName = this.createAccountForm.value.firstName;
     this.account.lastName = this.createAccountForm.value.lastName;
-    this.account.lastName = this.createAccountForm.value.birthday;
-    this.account.lastName = this.createAccountForm.value.email;
-    this.account.lastName = this.createAccountForm.value.pw1;
-    this.account.lastName = this.createAccountForm.value.pw2;
-    console.log(form)
+    this.account.birthday = this.createAccountForm.value.birthday;
+    this.account.email = this.createAccountForm.value.email;
+    this.account.pw1 = this.createAccountForm.value.pw1;
+    this.account.pw2 = this.createAccountForm.value.pw2;
+    console.log(form);
   }
 }
