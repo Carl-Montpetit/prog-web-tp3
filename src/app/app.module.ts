@@ -100,7 +100,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot( appRoutes )
   ],
-  exports: [ RouterModule, MatInputModule ],
+  exports: [ RouterModule, MatInputModule, MatDialogModule, MatButtonModule, MatFormFieldModule ],
   providers: [ LoginService ],
   bootstrap: [ AppComponent ]
 } )
