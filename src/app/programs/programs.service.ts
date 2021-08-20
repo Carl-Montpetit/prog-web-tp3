@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Program } from "./program-model";
 import { ShoppingItem } from './program-model';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Injectable({
   providedIn: 'root'
