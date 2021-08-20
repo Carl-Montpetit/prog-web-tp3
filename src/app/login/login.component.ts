@@ -35,14 +35,14 @@ export class LoginComponent implements OnInit {
   /**
    * Switch the status to true if a user is logged in
    */
-  onLoginUser() {
+  onLoginUser(): void {
     this.loggingService.onLoginUserService();
   }
 
   /**
    * Switch the status to true if the admin is logged in
    */
-  onLoginAdmin() {
+  onLoginAdmin(): void {
     this.loggingService.onLoginAdminService();
   }
 
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
    * update the fields of the user after submitted the form
    * @param form
    */
-  onSubmitUser( form: NgForm ) {
+  onSubmitUser( form: NgForm ): void {
     this.submittedUser = true;
     console.log( form );
     this.user.email = this.loginUserForm.value.email;
@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit {
    * update the fields of the admin after submitted the form
    * @param form
    */
-  onSubmitAdmin( form: NgForm ) {
+  onSubmitAdmin( form: NgForm ): void {
     this.submittedAdmin = true;
     console.log( form );
     this.admin.email = this.loginAdminForm.value.email;

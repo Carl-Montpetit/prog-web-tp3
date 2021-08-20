@@ -31,8 +31,16 @@ export class HeaderComponent implements OnInit, OnChanges {
   }
 
   setStatusOff(): void {
-    this._loggingService.onLogoutUserService();
-    this._loggingService.onLogoutAdminService();
-    alert("Vous êtes maintenant déconnecté!");
+    if (this._loggingService.getLoggingStatusUser() && !this._loggingService.getLoggingStatusAdmin()) {
+      this._loggingService.onLogoutUserService();
+    }
+    else if (!this._loggingService.getLoggingStatusUser() && this._loggingService.getLoggingStatusAdmin()) {
+      this._loggingService.onLogoutAdminService();
+    }
+    else if (this._loggingService.getLoggingStatusUser() && this._loggingService.getLoggingStatusAdmin()) {
+      this._loggingService.onLogoutUserService();
+      this._loggingService.onLogoutAdminService();
+    }
+
   }
 }
