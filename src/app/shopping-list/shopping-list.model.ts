@@ -1,5 +1,5 @@
 export enum Pays {
-    CA = 'Canada',
+    empty = '',
     AF = 'Afghanistan',
     AX = 'AlandIslands',
     AL = 'Albania',
@@ -38,6 +38,7 @@ export enum Pays {
     BI = 'Burundi',
     KH = 'Cambodia',
     CM = 'Cameroon',
+    CA = 'Canada',
     CV = 'Cape Verde',
     KY = 'Cayman Islands',
     CF = 'Central African Republic',
@@ -250,7 +251,7 @@ export enum Pays {
 }
 
 export enum Provinces {
-    QC = 'Québec',
+    empty = '',
     AB = 'Alberta',
     BC = 'Colombie-Britannique',
     MB = 'Manitoba',
@@ -261,6 +262,7 @@ export enum Provinces {
     NU = 'Nunavut',
     ON = 'Ontario',
     PE = 'Île-du-Prince-Édouard',
+    QC = 'Québec',
     SK = 'Saskatchewan',
     YT = 'Yukon',
 }

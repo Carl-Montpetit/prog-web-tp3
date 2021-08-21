@@ -112,6 +112,14 @@
           </a>
         </li>
         <li
+          *ngIf="getUserStatus()"
+          class="bg-primary">
+          <a
+            class="nav-link bg-info text-dark border border-dark rounded-pill">
+            🙎‍♂️
+          </a>
+        </li>
+        <li
           *ngIf="getAdminStatus()"
           class="nav-item btn btn-primary"
           routerLinkActive="active">
