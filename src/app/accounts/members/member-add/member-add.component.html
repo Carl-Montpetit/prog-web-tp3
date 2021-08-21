@@ -10,45 +10,29 @@
           [formGroup]="newMemberForm"
           (ngSubmit)="onSubmit()">
       <label id="firstNameL" class="font-weight-bolder" for="firstName">Prénom :</label>
-      <input
-        type="text"
-        id="firstName"
-        class="form-control"
-        name="firstName"
-        placeholder="Entrez le prénom"
-        required>
+      <input formControlName="firstName"><br>
       <label id="lastNameL" class="font-weight-bolder m-3" for="lastName">Nom de famille :</label>
-      <input
-        type="text"
-        id="lastName"
-        class="form-control"
-        name="firstName"
-        placeholder="Entrez le nom de famille"
-        required>
+      <input formControlName="lasttName"><br>
       <label id="dateOfBirthL" class="font-weight-bolder m-3" for="dateOfBirth">Date de naissance :</label>
-      <input
-        type="date"
-        id="dateOfBirth"
-        class="form-control text-center"
-        name="date"
-        placeholder="Entrez la date de naissance"
-        required>
+      <input formControlName="dateOfBirth" type="date">
       <br>
       <button
-        type="submit"
-        [disabled]="!newMemberForm.valid"
+        type="submit"       
         class="form-control btn btn-success border-dark w-50 text-light m-2">
         Ajouter
       </button>
-      <input
-        id="cancel"
+      <button routerLink=""
         class="form-control btn btn-danger border-dark w-50 text-light m-2"
-        type="reset"
-        value="Annuler">
+        type="reset">
+        Annuler
+      </button>
     </form>
-    <p class="">
-      Form Status: {{ newMemberForm.status }}
-    </p>
   </div>
 </div>
-
+<br>
+<div #alert *ngIf="this.submit" class="h4 text-center alert alert-success alert-dismissible fade show" role="alert">
+  <button type="button" class="close" aria-label="Close" (click)="closeAlert()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  Vous avez ajouté un member a votre famille.
+</div>
