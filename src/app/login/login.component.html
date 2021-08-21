@@ -34,9 +34,9 @@
           required
           email
           #eu="ngModel">
-        <p class="text-danger small" *ngIf="!eu.valid && eu.touched">
-          Svp, veuillez entrer un courriel valide!..
-        </p>
+        <div class="alert-danger small" *ngIf="!eu.valid && eu.touched">
+          ⚠️Svp, veuillez entrer un courriel valide!..
+        </div>
         <label
           class="font-weight-bold text-center"
           for="pwUser">
@@ -51,9 +51,10 @@
           placeholder="Entrez votre mot de passe"
           required
           #pu="ngModel">
-        <p class="text-danger small" *ngIf="(!pu.valid && pu.touched)">
-          Svp, veuillez entrer un mot de passe valide!..
-        </p>
+        <div class="alert-danger small" *ngIf="(!(regExPw.test(pu.value)) && pu.touched)">
+          ⚠️Svp, veuillez entrer un mot de passe contenant au minimum 8 lettres, un symbole(#$%...), un nombre, une
+          lettre majuscule et une lettre minuscule!..
+        </div>
         <input
           class="col-md-12 mx-1 form-control btn btn-success border border-dark w-auto text-light mt-3 mr-2"
           type="submit"
@@ -96,9 +97,9 @@
           required
           email
           #ea="ngModel">
-        <p class="text-danger small" *ngIf="!ea.valid && ea.touched && ea.value !== 'admin@admin'">
-          Svp, veuillez entrer un courriel valide!..
-        </p>
+        <div class="alert-danger small" *ngIf="!ea.valid && ea.touched && ea.value !== 'admin@admin'">
+          ⚠️Svp, veuillez entrer un courriel d'administrateur valide!..
+        </div>
         <label
           class="font-weight-bold text-center"
           for="pwAdmin">
@@ -113,9 +114,10 @@
           placeholder="Entrez votre mot de passe"
           required
           #pa="ngModel">
-        <p class="text-danger small" *ngIf="!pa.valid && pa.touched && pa.value !== 'admin'">
-          Svp, veuillez entrer un mot de passe valide!..
-        </p>
+        <div class="alert-danger small" *ngIf="(!(regExPw.test(pa.value)) && pa.touched)">
+          ⚠️Svp, veuillez entrer un mot de passe contenant au minimum 8 lettres, un symbole(#$%...), un nombre, une
+          lettre majuscule et une lettre minuscule!..
+        </div>
         <input
           class="col-md-12 mx-1 form-control btn btn-success border border-dark w-auto text-light mt-3 mr-2"
           type="submit"

@@ -4,7 +4,6 @@
     *ngFor="let shoppingItem of programService.getShoppingCart()">
     <li class="list-group-item d-flex justify-content-between lh-condensed">
       <div>
-      <!--TODO : It is going to be dynamic-->
         <h5 class="text-secondary font-weight-bold">{{shoppingItem.name}}</h5>
         <h5 class="text-info font-weight-bold">{{shoppingItem.kidSubscribed}}</h5>
         <button (click)="programService.removeFromCart(shoppingItem, shoppingItem.price)"
@@ -15,7 +14,6 @@
       </div>
       <h5 class="text-success font-weight-bold">{{shoppingItem.price}}$</h5>
     </li>
-    <!--TODO : It is going to be dynamic-->
   </ul>
   <li class="list-group-item d-flex justify-content-between">
     <h2 class="font-weight-bolder">Total : </h2>

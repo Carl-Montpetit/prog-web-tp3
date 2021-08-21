@@ -11,6 +11,10 @@ export class LoginComponent implements OnInit {
   @ViewChild( 'fu' ) loginUserForm: NgForm;
   @ViewChild( 'fa' ) loginAdminForm: NgForm;
 
+  // password format regex for validation & security
+  // Minimum 8 letters with a least a symbol, upper and lower case letters and a number
+  regExPw = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
   // the field is initialized empty
   user = {
     email: '',
@@ -48,6 +52,7 @@ export class LoginComponent implements OnInit {
 
   /**
    * update the fields of the user after submitted the form
+   * TODO : implement to sent to Json file
    * @param form
    */
   onSubmitUser( form: NgForm ): void {
@@ -59,6 +64,7 @@ export class LoginComponent implements OnInit {
 
   /**
    * update the fields of the admin after submitted the form
+   * TODO : implement to sent to Json file
    * @param form
    */
   onSubmitAdmin( form: NgForm ): void {
