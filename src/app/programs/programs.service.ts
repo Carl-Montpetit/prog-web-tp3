@@ -6,11 +6,13 @@ import { ShoppingItem } from './program-model';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { LoginService } from '../login/login.service';
 import { Router } from '@angular/router';
-import { MembersService } from '../accounts/members/members.service'; 
+import { MembersService } from '../accounts/members/members.service';
+import { Type } from "./program-model";
+import { blocActivities } from "./program-model";
 
-@Injectable({
+@Injectable( {
   providedIn: 'root'
-})
+} )
 export class ProgramsService {
   public programs = [
     new Program( 'Le Classique : 🏸🔭🎨', 'Le classique comprend chaque jour un bloc d’activités de type sportif et un' +
@@ -26,7 +28,7 @@ export class ProgramsService {
       ' actifs.' +
       ' Il' +
       ' comprend au moins quatre activités quotidiennes dont le basketball, le tennis, le soccer, le ballon' +
-      ' chasseur, le baseball, etc.', ['Steve', ' Matthiew'], ['Justin', ' Mario'], [ 'Sport🏈' ], ['baseball⚾️', ' natation🏊‍'],
+      ' chasseur, le baseball, etc.', [ 'Steve', ' Matthiew' ], [ 'Justin', ' Mario' ], [ 'Sport🏈' ], [ 'baseball⚾️', ' natation🏊‍' ],
       135, 'https://cdn.cdnparenting.com/articles/2018/03/72136312-H.webp' ),
   ];
 
@@ -34,8 +36,11 @@ export class ProgramsService {
   static totalPrice = 0;
   static userStatus: boolean;
   static adminStatus: boolean;
+  static blocActivities: string[];
 
-  constructor(private dialog: MatDialog, public loginService: LoginService, public memberService: MembersService, private router: Router) {}
+  constructor( private dialog: MatDialog, public loginService: LoginService,
+               public memberService: MembersService, private router: Router ) {
+  }
 
   getPrograms() {
     return this.programs;
@@ -45,8 +50,8 @@ export class ProgramsService {
     return ProgramsService.shoppingList;
   }
 
-  addToCart(programName,child, programPrice) {
-    ProgramsService.shoppingList.push(new ShoppingItem(programName, child, programPrice));
+  addToCart( programName, child, programPrice ) {
+    ProgramsService.shoppingList.push( new ShoppingItem( programName, child, programPrice ) );
     ProgramsService.totalPrice = ProgramsService.totalPrice + programPrice;
   }
 
@@ -54,24 +59,26 @@ export class ProgramsService {
     return ProgramsService.totalPrice;
   }
 
-  removeFromCart(program, price) {
-    let index = ProgramsService.shoppingList.indexOf(program)
-    ProgramsService.shoppingList.splice(index, 1)
+  removeFromCart( program, price ) {
+    let index = ProgramsService.shoppingList.indexOf( program )
+    ProgramsService.shoppingList.splice( index, 1 )
     ProgramsService.totalPrice = ProgramsService.totalPrice - price;
   }
 
-  selectChildPopup(programName, programPrice) {
+  selectChildPopup( programName, programPrice ) {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
-    this.dialog.open(PopupComponent, dialogConfig)
-    
-    .afterClosed()
-    .subscribe(childSelected => {
-      if (childSelected) {this.addToCart(programName, childSelected, programPrice);}
-    });
+    this.dialog.open( PopupComponent, dialogConfig )
+
+      .afterClosed()
+      .subscribe( childSelected => {
+        if ( childSelected ) {
+          this.addToCart( programName, childSelected, programPrice );
+        }
+      } );
   }
 
   getUserStatus(): boolean {
@@ -84,26 +91,27 @@ export class ProgramsService {
     return ProgramsService.adminStatus;
   }
 
-  checkLogin(programName, programPrice) {
-    if (this.getUserStatus()){
-      if (this.memberService.getChildren().length == 0) {
+  checkLogin( programName, programPrice ) {
+    if ( this.getUserStatus() ) {
+      if ( this.memberService.getChildren().length == 0 ) {
         const dialogConfig = new MatDialogConfig();
-        dialogConfig.data = {text: "vous n'avez aucun enfant enregistré"}
-        this.dialog.open(BlankPopupComponent, dialogConfig)
-        .afterClosed()
-        .subscribe(close => {
-          this.router.navigate(['membres'])
-        });} else {
-          this.selectChildPopup(programName, programPrice)
-        }
+        dialogConfig.data = { text: "vous n'avez aucun enfant enregistré" }
+        this.dialog.open( BlankPopupComponent, dialogConfig )
+          .afterClosed()
+          .subscribe( close => {
+            this.router.navigate( [ 'membres' ] )
+          } );
+      } else {
+        this.selectChildPopup( programName, programPrice )
+      }
     } else {
       const dialogConfig = new MatDialogConfig();
-      dialogConfig.data = {text: 'Il faut etre connecté'}
-      this.dialog.open(BlankPopupComponent, dialogConfig)
-      .afterClosed()
-      .subscribe(close => {
-        this.router.navigate(['connection'])
-      });
+      dialogConfig.data = { text: 'Il faut etre connecté' }
+      this.dialog.open( BlankPopupComponent, dialogConfig )
+        .afterClosed()
+        .subscribe( close => {
+          this.router.navigate( [ 'connection' ] )
+        } );
     }
   }
 }

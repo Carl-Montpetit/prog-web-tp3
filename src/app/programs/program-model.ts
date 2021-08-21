@@ -8,3 +8,48 @@ export class Program {
 export class ShoppingItem {
   constructor( public name: string, public kidSubscribed: string, public price: number) {}
 }
+
+export enum Type {
+  A = 'art',
+  SC = 'science',
+  SP = 'sport',
+  AA = 'aquatique',
+  EX = 'exploration',
+  MU = 'musique',
+  ED = 'éducatif',
+}
+
+export enum Monitors {
+  CM = 'Carl Montpetit',
+  MJ = 'Matthew Jovani',
+  PL = 'Patrick Lafontaine',
+  PD = 'Pascal Desjardin',
+  MP = 'Michelle Pignar',
+  JM = 'Jennefer Morgan',
+}
+
+export class Activity {
+  constructor(private name: string, private type: Type) {
+  }
+
+  getName(): string {
+    return this.name;
+  }
+
+  getType():Type {
+    return this.type;
+  }
+}
+
+export class blocActivities {
+  constructor(private blocActivities: Activity[]) {
+  }
+
+  /**
+   * return the activity of a given position in the array of activities
+   * @param i
+   */
+  getActivity(i: number): Activity {
+    return blocActivities[i];
+  }
+}
