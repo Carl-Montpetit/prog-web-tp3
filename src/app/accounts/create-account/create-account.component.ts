@@ -11,7 +11,10 @@ export class CreateAccountComponent implements OnInit {
 
   // password format regex for validation & security
   // Minimum 8 letters with a least a symbol, upper and lower case letters and a number
-  regEx = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+  regExPw = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
+  // Name regex : accept only letters (capital or not)
+  regExName = /^[a-zA-Z]+$/;
 
   // definition of an account
   private account = {
