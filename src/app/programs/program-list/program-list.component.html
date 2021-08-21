@@ -28,16 +28,16 @@
         </h2>
       </div>
       <div class="row">
-        <div class="col-8 p-2">
-          <button (click)="programService.selectChildPopup(program.name, program.price)"
+        <div  class="col-8 p-2">
+          <button (click)="programService.checkLogin(program.name, program.price)"
             class="btn btn-success border-dark text-light font-weight-bolder text-center m-2 p-2 w-auto">
             Ajouter au panier
           </button>
-          <button
+          <button *ngIf="programService.getAdminStatus()"
             class="btn btn-warning border-dark text-dark font-weight-bolder text-center m-2 p-2 w-auto">
             Modifier le programme
           </button>
-          <button
+          <button *ngIf="programService.getAdminStatus()"
             class="btn btn-danger border-dark text-light font-weight-bolder text-center m-2 p-2 w">
             Supprimer le programme
           </button>

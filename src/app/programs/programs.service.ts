@@ -1,9 +1,11 @@
+import { BlankPopupComponent } from './../blank-popup/blank-popup.component';
 import { PopupComponent } from './../popup/popup.component';
 import { Injectable } from '@angular/core';
 import { Program } from "./program-model";
 import { ShoppingItem } from './program-model';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginService } from '../login/login.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -29,8 +31,10 @@ export class ProgramsService {
 
   static shoppingList = [];
   static totalPrice = 0;
+  static userStatus: boolean;
+  static adminStatus: boolean;
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, public loginService: LoginService, private router: Router) {}
 
   getPrograms() {
     return this.programs;
@@ -67,5 +71,26 @@ export class ProgramsService {
     .subscribe(childSelected => {
       if (childSelected) {this.addToCart(programName, childSelected, programPrice);}
     });
+  }
+
+  getUserStatus(): boolean {
+    ProgramsService.userStatus = this.loginService.getLoggingStatusUser()
+    return ProgramsService.userStatus;
+  }
+
+  getAdminStatus(): boolean {
+    ProgramsService.adminStatus = this.loginService.getLoggingStatusAdmin()
+    return ProgramsService.adminStatus;
+  }
+
+  checkLogin(programName, programPrice) {
+    if (this.getUserStatus()){
+      this.selectChildPopup(programName, programPrice)
+    } else {
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.data = {text: 'Il faut etre connecté'}
+      this.dialog.open(BlankPopupComponent, dialogConfig)
+      this.router.navigate(['connection']);
+    }
   }
 }

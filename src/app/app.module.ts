@@ -40,6 +40,7 @@ import { CreateTypeComponent } from './activities/types/create-type/create-type.
 import { LoginService } from "./login/login.service";
 import { AdminComponent } from './admin/admin.component';
 import { PopupComponent } from './popup/popup.component';
+import { BlankPopupComponent } from './blank-popup/blank-popup.component';
 
 const appRoutes: Routes = [
   { path: 'connection', component: LoginComponent },
@@ -87,6 +88,7 @@ const appRoutes: Routes = [
     CreateTypeComponent,
     AdminComponent,
     PopupComponent,
+    BlankPopupComponent,
   ],
   imports: [
     BrowserModule,
