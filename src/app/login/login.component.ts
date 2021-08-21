@@ -52,6 +52,7 @@ export class LoginComponent implements OnInit {
 
   /**
    * update the fields of the user after submitted the form
+   * TODO : implement to sent to Json file
    * @param form
    */
   onSubmitUser( form: NgForm ): void {
@@ -63,6 +64,7 @@ export class LoginComponent implements OnInit {
 
   /**
    * update the fields of the admin after submitted the form
+   * TODO : implement to sent to Json file
    * @param form
    */
   onSubmitAdmin( form: NgForm ): void {

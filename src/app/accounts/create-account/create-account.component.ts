@@ -23,7 +23,6 @@ export class CreateAccountComponent implements OnInit {
     birthday: '',
     email: '',
     pw1: '',
-    pw2: ''
 }
 
   constructor() {
@@ -44,7 +43,6 @@ export class CreateAccountComponent implements OnInit {
     this.account.birthday = this.createAccountForm.value.date;
     this.account.email = this.createAccountForm.value.email;
     this.account.pw1 = this.createAccountForm.value.pw1;
-    this.account.pw2 = this.createAccountForm.value.pw2;
     // print the data in the console
     console.log(form);
     console.log(this.account.firstName);
@@ -52,6 +50,5 @@ export class CreateAccountComponent implements OnInit {
     console.log(this.account.birthday);
     console.log(this.account.email);
     console.log(this.account.pw1);
-    console.log(this.account.pw2);
   }
 }
