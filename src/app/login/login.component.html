@@ -34,7 +34,7 @@
           required
           email
           #eu="ngModel">
-        <div class="alert-danger small" *ngIf="!eu.valid && eu.touched">
+        <div class="alert-danger small text-left" *ngIf="!eu.valid && eu.touched">
           ⚠️Svp, veuillez entrer un courriel valide!..
         </div>
         <label
@@ -51,7 +51,7 @@
           placeholder="Entrez votre mot de passe"
           required
           #pu="ngModel">
-        <div class="alert-danger small" *ngIf="(!(regExPw.test(pu.value)) && pu.touched)">
+        <div class="alert-danger small text-left" *ngIf="(!(regExPw.test(pu.value)) && pu.touched)">
           ⚠️Svp, veuillez entrer un mot de passe contenant au minimum 8 lettres, un symbole(#$%...), un nombre, une
           lettre majuscule et une lettre minuscule!..
         </div>
@@ -97,7 +97,7 @@
           required
           email
           #ea="ngModel">
-        <div class="alert-danger small" *ngIf="!ea.valid && ea.touched && ea.value !== 'admin@admin'">
+        <div class="alert-danger small text-left" *ngIf="!ea.valid && ea.touched && ea.value !== 'admin@admin'">
           ⚠️Svp, veuillez entrer un courriel d'administrateur valide!..
         </div>
         <label
@@ -114,7 +114,7 @@
           placeholder="Entrez votre mot de passe"
           required
           #pa="ngModel">
-        <div class="alert-danger small" *ngIf="(!(regExPw.test(pa.value)) && pa.touched)">
+        <div class="alert-danger small text-left" *ngIf="(!(regExPw.test(pa.value)) && pa.touched)">
           ⚠️Svp, veuillez entrer un mot de passe contenant au minimum 8 lettres, un symbole(#$%...), un nombre, une
           lettre majuscule et une lettre minuscule!..
         </div>

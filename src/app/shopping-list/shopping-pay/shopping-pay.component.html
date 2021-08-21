@@ -1,132 +1,204 @@
 <!--TODO : form validation HTML is done but needs the TS validation (for front-end) + back-end too!-->
 <!--TODO : MENTIONNER LES RÉFÉRENCES SVP!!-->
 <div>
-  <h4 class="mb-3">Information personnel</h4>
-  <form>
+  <h4 class="mb-3 text-primary display-4">Information personnel</h4>
+  <form
+    (ngSubmit)="onSubmitPay(f)"
+    #f="ngForm">
     <div class="row">
-      <div class="col-md-6 mb-3">
+      <div class="col-md-6 mb-3 font-weight-bolder">
         <label for="firstName">Prénom</label>
         <input
           type="text"
-          class="form-control"
+          class="form-control border border-dark"
           id="firstName"
+          ngModel
+          name="firstName"
           placeholder="Votre prénom"
-          value=""
-          required>
+          required
+          #firstName="ngModel">
+        <div class="alert-danger small text-left" *ngIf="(firstName.value.length < 3 || firstName.value.length > 30) && firstName.touched">
+          ⚠️Svp, veuillez entrer un prénom contenant entre 3 et 30 lettres!..
+        </div>
+        <div class="alert-warning small text-left" *ngIf="!regExName.test(firstName.value) && firstName.touched">
+          ⚠️Svp, veuillez entrer un prénom contenant seulement des lettres!..
+        </div>
       </div>
-      <div class="col-md-6 mb-3">
+      <div class="col-md-6 mb-3 font-weight-bolder">
         <label for="lastName">Nom</label>
         <input
           type="text"
-          class="form-control"
           id="lastName"
-          placeholder="Votre nom de famille"
-          value=""
-          required>
+          class="form-control border border-dark"
+          ngModel
+          name="lastName"
+          placeholder="Entrez votre nom"
+          required
+          #lastName="ngModel">
+        <div class="alert-danger small text-left" *ngIf="(lastName.value.length < 3 || lastName.value.length > 30) && lastName.touched">
+          ⚠️Svp, veuillez entrer un nom de famille contenant entre 3 et 30 caractères!..
+        </div>
+        <div class="alert-warning small text-left" *ngIf="!regExName.test(lastName.value) && lastName.touched">
+          ⚠️Svp, veuillez entrer un nom de famille contenant seulement des lettres!..
+        </div>
       </div>
     </div>
     <div class="mb-3">
-      <label for="email">Courriel </label>
+      <label for="email" class="font-weight-bolder">Courriel </label>
       <input
         type="email"
-        class="form-control"
         id="email"
-        placeholder="abc123@exemple.com">
+        class="form-control border border-dark"
+        ngModel
+        name="email"
+        placeholder="Entrez votre courriel"
+        required
+        email
+        #email="ngModel">
+      <div class="alert-danger small text-left" *ngIf="!email.valid && email.touched">
+        ⚠️Svp, veuillez entrer un courriel valide!..
+      </div>
     </div>
     <div class="mb-3">
-      <label for="address">Adresse</label>
+      <label for="address" class="font-weight-bolder">Adresse</label>
       <input
         type="text"
-        class="form-control"
+        class="form-control border border-dark"
         id="address"
+        ngModel
+        name="address"
         placeholder="ex : 1234 Rue Principal"
-        required>
+        required
+        #address="ngModel">
+      <div class="alert-danger text-left" *ngIf="!address.valid && address.touched">
+        ⚠️Svp, veuillez entrer votre adresse!..
+      </div>
     </div>
     <div class="row">
       <div class="col-md-5 mb-3">
-        <label for="country">Pays</label>
-        
+        <label for="country" class="font-weight-bolder">Pays</label>
         <select
-          class="custom-select d-block w-100"
+          class="custom-select d-block w-100 border border-dark"
           id="country"
-          required>
-          <option *ngFor= "let listePays of shoppingListService.getPays()">{{listePays}}</option>
+          ngModel
+          name="country"
+          required
+          #country="ngModel">
+          <option *ngFor="let listePays of shoppingListService.getPays()">{{listePays}}</option>
         </select>
       </div>
-    
       <div class="col-md-4 mb-3">
-        <label for="state">Province</label>
+        <label for="state" class="font-weight-bolder">Province</label>
         <select
-          class="custom-select d-block w-100"
+          class="custom-select d-block w-100 border border-dark"
           id="state"
-          required>
-          <option *ngFor= "let listeProvinces of shoppingListService.getProvinces()">{{listeProvinces}}</option>
+          ngModel
+          name="state"
+          required
+          #state="ngModel">
+          <option *ngFor="let listeProvinces of shoppingListService.getProvinces()">{{listeProvinces}}</option>
         </select>
       </div>
       <div class="col-md-3 mb-3">
-        <label for="zip">Code Postal</label>
+        <label for="zip" class="font-weight-bolder">Code Postal</label>
         <input
           type="text"
-          class="form-control"
+          class="form-control border border-dark"
           id="zip"
+          ngModel
+          name="zip"
           placeholder="A#A #A#"
-          required>
+          required
+          #zip="ngModel">
+        <div class="alert-warning text-left" *ngIf="!(regExPostalCode.test(zip.value)) && zip .touched">
+          ⚠️Svp, veuillez entrer un code postal valide!..
+        </div>
       </div>
     </div>
-    <h4 class="mb-3">Paiement</h4>
+    <h4 class="mb-3 display-4 text-danger">Paiement</h4>
     <div class="row">
       <div class="col-md-6 mb-3">
-        <label for="cc-name">Nom</label>
+        <label for="cc-name" class="font-weight-bolder">Nom</label>
         <input
           type="text"
-          class="form-control"
+          class="form-control border border-dark"
           id="cc-name"
+          ngModel
+          name="ccName"
           placeholder="Nom sur la carte"
-          required>
-        <small class="text-black-50 font-weight-bold">Nom complet tel qu'affiché sur la carte</small>
+          required
+          #cn="ngModel">
+        <div class="alert-danger small text-left" *ngIf="(cn.value.length < 3 || cn.value.length > 30) && cn.touched">
+          ⚠️Svp, veuillez entrer un nom contenant entre 3 et 30 caractères!..
+        </div>
+        <div class="alert-danger text-left" *ngIf="!regExFullName.test(cn.value) && cn.touched">
+          ⚠️Svp, veuillez entrer un nom valide pour la carte!..
+        </div>
+        <div class="text-black-50 text-left font-weight-bold">☞Nom complet tel qu'affiché sur la carte!</div>
       </div>
       <div class="col-md-6 mb-3">
-        <label for="cc-number">Numéro de Carte de Crédit</label>
+        <label for="cc-number" class="font-weight-bolder">Numéro de Carte de Crédit</label>
         <input
           type="password"
-          class="form-control"
+          class="form-control border border-dark"
           id="cc-number"
+          ngModel
+          name="ccNumber"
           placeholder="xxxx xxxx xxxx xxxx"
-          required>
+          required
+          #cnum="ngModel">
+        <div class="alert-danger text-left" *ngIf="!regExMasterCard.test(cnum.value)
+             && !regExVisaMasterCard.test(cnum.value) && !regExVisaCard.test(cnum.value) && cnum.touched">
+          ⚠️Svp, veuillez entrer un numéro de carte de crédit valide!..
+        </div>
+        <div class="text-black-50 text-left font-weight-bold">
+          ☞<strong>Mastercard</strong> et <strong>visa</strong> seulement sont accepté!
+        </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3 mb-3">
-        <label for="cc-expiration">Expiration</label>
+        <label for="cc-expiration" class="font-weight-bolder">Expiration</label>
         <input
           type="date"
-          class="form-control"
+          class="form-control border border-dark"
           id="cc-expiration"
+          ngModel
+          name="ccExp"
           placeholder=""
-          required>
+          required
+          #date="ngModel">
       </div>
       <div class="col-md-3 mb-3">
-        <label for="cc-cvv">CVV</label>
+        <label for="cc-cvv" class="font-weight-bolder">CVV</label>
         <input
           type="password"
-          class="form-control"
+          class="form-control border border-dark"
           id="cc-cvv"
-          placeholder="xxx"
-          required>
+          ngModel
+          name="cvv"
+          placeholder="3 ou 4 nombres"
+          required
+          #cvv="ngModel">
+        <div class="alert-danger text-left" *ngIf="!(regExCvv.test(cvv.value)) && cvv.touched">
+          ⚠️Svp, veuillez entrer un numéro de sécurité (cvv) de carte valide!..
+        </div>
       </div>
     </div>
-  </form>
     <hr class="mb-4">
-    <div class="form-inline text-center justify-content-center">
-      <button
-        class="btn btn-success btn-lg btn-block w-auto border-dark m-3"
-        type="submit">
-        Confirmer et Payer
-      </button>
-      <button
-        class="btn btn-danger btn-lg btn-block w-auto border-dark m-3"
-        type="reset">
-        Annuler
-      </button>
+    <div>
+      <input
+        class="form-control btn btn-success border-dark w-auto m-2 h-auto p-2 font-weight-bolder"
+        type="submit"
+        name="submit"
+        value="Confirmer et payer"
+        [disabled]="!f.valid">
+      <input
+        id="cancel"
+        class="form-control btn btn-danger border-dark w-auto m-2 h-auto p-2 font-weight-bolder"
+        type="reset"
+        value="Annuler"
+        routerLink="">
     </div>
+  </form>
 </div>
