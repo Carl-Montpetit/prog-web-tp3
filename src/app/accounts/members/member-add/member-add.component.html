@@ -9,11 +9,11 @@
     <form class="form-group text-center p-2"
           [formGroup]="newMemberForm"
           (ngSubmit)="onSubmit()">
-      <label id="firstNameL" class="font-weight-bolder" for="firstName">Prénom :</label>
+      <label id="firstName" class="font-weight-bolder" for="firstName">Prénom :</label>
       <input formControlName="firstName"><br>
-      <label id="lastNameL" class="font-weight-bolder m-3" for="lastName">Nom de famille :</label>
-      <input formControlName="lasttName"><br>
-      <label id="dateOfBirthL" class="font-weight-bolder m-3" for="dateOfBirth">Date de naissance :</label>
+      <label id="lastName" class="font-weight-bolder m-3" for="lastName">Nom de famille :</label>
+      <input formControlName="lastName"><br>
+      <label id="dateOfBirth" class="font-weight-bolder m-3" for="dateOfBirth">Date de naissance :</label>
       <input formControlName="dateOfBirth" type="date">
       <br>
       <button

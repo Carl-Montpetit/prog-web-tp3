@@ -6,6 +6,7 @@ import { ShoppingItem } from './program-model';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { LoginService } from '../login/login.service';
 import { Router } from '@angular/router';
+import { MembersService } from '../accounts/members/members.service'; 
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +35,7 @@ export class ProgramsService {
   static userStatus: boolean;
   static adminStatus: boolean;
 
-  constructor(private dialog: MatDialog, public loginService: LoginService, private router: Router) {}
+  constructor(private dialog: MatDialog, public loginService: LoginService, public memberService: MembersService, private router: Router) {}
 
   getPrograms() {
     return this.programs;
@@ -85,7 +86,16 @@ export class ProgramsService {
 
   checkLogin(programName, programPrice) {
     if (this.getUserStatus()){
-      this.selectChildPopup(programName, programPrice)
+      if (this.memberService.getChildren().length == 0) {
+        const dialogConfig = new MatDialogConfig();
+        dialogConfig.data = {text: "vous n'avez aucun enfant enregistré"}
+        this.dialog.open(BlankPopupComponent, dialogConfig)
+        .afterClosed()
+        .subscribe(close => {
+          this.router.navigate(['membres'])
+        });} else {
+          this.selectChildPopup(programName, programPrice)
+        }
     } else {
       const dialogConfig = new MatDialogConfig();
       dialogConfig.data = {text: 'Il faut etre connecté'}
@@ -94,7 +104,6 @@ export class ProgramsService {
       .subscribe(close => {
         this.router.navigate(['connection'])
       });
-      
     }
   }
 }
