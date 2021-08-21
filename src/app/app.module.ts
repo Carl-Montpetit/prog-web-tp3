@@ -29,17 +29,10 @@ import { MemberAddComponent } from './accounts/members/member-add/member-add.com
 import { MemberDeleteComponent } from './accounts/members/member-delete/member-delete.component';
 import { SubscriptionsComponent } from './subscriptions/subscriptions.component';
 import { HistoryComponent } from './accounts/history/history.component';
-import { ActivitiesComponent } from './activities/activities.component';
-import { CreateActivitiesBlocComponent } from './activities/create-activities-bloc/create-activities-bloc.component';
-import { CreateActivityComponent } from './activities/create-activity/create-activity.component';
 import { SessionsComponent } from './sessions/sessions.component';
 import { AccountsComponent } from './accounts/accounts.component';
-import { CreateProgramComponent } from './programs/create-program/create-program.component';
 import { CreateSessionComponent } from './sessions/create-session/create-session.component';
-import { TypesComponent } from './activities/types/types.component';
-import { CreateTypeComponent } from './activities/types/create-type/create-type.component';
 import { LoginService } from "./login/login.service";
-import { AdminComponent } from './admin/admin.component';
 import { PopupComponent } from './popup/popup.component';
 import { BlankPopupComponent } from './blank-popup/blank-popup.component';
 
@@ -78,16 +71,9 @@ const appRoutes: Routes = [
     MemberDeleteComponent,
     SubscriptionsComponent,
     HistoryComponent,
-    ActivitiesComponent,
-    CreateActivitiesBlocComponent,
-    CreateActivityComponent,
     SessionsComponent,
     AccountsComponent,
-    CreateProgramComponent,
     CreateSessionComponent,
-    TypesComponent,
-    CreateTypeComponent,
-    AdminComponent,
     PopupComponent,
     BlankPopupComponent,
   ],
