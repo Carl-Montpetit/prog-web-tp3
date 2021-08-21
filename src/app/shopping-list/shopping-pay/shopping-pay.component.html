@@ -2,7 +2,8 @@
 <!--TODO : MENTIONNER LES RÉFÉRENCES SVP!!-->
 <div>
   <h4 class="mb-3">Information personnel</h4>
-  <form class="form-group" novalidate>
+  <mat-dialog-content>
+  <mat-form-field appearance="fill">
     <div class="row">
       <div class="col-md-6 mb-3">
         <label for="firstName">Prénom</label>
@@ -45,35 +46,24 @@
     <div class="row">
       <div class="col-md-5 mb-3">
         <label for="country">Pays</label>
-        <select
+        <select (change)="selectChangeHandler($event)" [(ngModel)]="selectedCountry" matNativeControl
           class="custom-select d-block w-100"
           id="country"
           required>
-          <option value="">Choisir...</option>
-          <option>Canada</option>
-          <option>Étas-Unis</option>
-          <option>Mexique</option>
-          <option>France</option>
-          <option>Japon</option>
-          <option>Chine</option>
+          <option *ngFor= "let listePays of shoppingListService.getPays()">{{listePays}}</option>
         </select>
-      </div>
-      <div class="col-md-4 mb-3">
+      </div>   
+      <div *ngIf="isCanada()" class="col-md-4 mb-3">
         <label for="state">Province</label>
         <select
           class="custom-select d-block w-100"
           id="state"
           required>
-          <option value="">Choisir...</option>
-          <option>Québec</option>
-          <option>Ontario</option>
-          <option>Manitoba</option>
-          <option>Gaspésie</option>
-          <option>New-Jersey</option>
+          <option *ngFor= "let listeProvinces of shoppingListService.getProvinces()">{{listeProvinces}}</option>
         </select>
       </div>
       <div class="col-md-3 mb-3">
-        <label for="zip">Code postal</label>
+        <label for="zip">Code Postal</label>
         <input
           type="text"
           class="form-control"
@@ -124,6 +114,9 @@
           required>
       </div>
     </div>
+  </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions class="justify-content-center">
     <hr class="mb-4">
     <div class="form-inline text-center justify-content-center">
       <button
@@ -137,5 +130,5 @@
         Annuler
       </button>
     </div>
-  </form>
+  </mat-dialog-actions>
 </div>

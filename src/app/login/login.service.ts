@@ -1,4 +1,8 @@
 import { Injectable } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { BlankPopupComponent } from '../blank-popup/blank-popup.component';
+import { Location } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +15,7 @@ export class LoginService {
   static isValidated: boolean = false;
 
   // empty constructor
-  constructor() {
+  constructor(private dialog: MatDialog, private location: Location) {
   }
 
   /**
@@ -19,7 +23,13 @@ export class LoginService {
    */
   onLoginUserService() {
     LoginService.statusUser = true;
-    alert("Bienvenu, vous êtes maintenant connecté en tant qu'utilisateur!..");
+    const dialogConfig = new MatDialogConfig();
+      dialogConfig.data = {text: "Bienvenu, vous êtes maintenant connecté en tant qu'utilisateur!.."}
+      this.dialog.open(BlankPopupComponent, dialogConfig)
+      .afterClosed()
+      .subscribe(close => {
+        this.location.back()
+      });
     console.log( 'Le status du compte utilsiateur a changé, nouveau status: ' + LoginService.statusUser );
   }
 
@@ -44,7 +54,13 @@ export class LoginService {
    */
   onLoginAdminService() {
     LoginService.statusAdmin = true;
-    alert("Bienvenu, vous êtes maintenant connecté en tant qu'administrateur!..");
+    const dialogConfig = new MatDialogConfig();
+      dialogConfig.data = {text: "Bienvenu, vous êtes maintenant connecté en tant qu'administrateur!.."}
+      this.dialog.open(BlankPopupComponent, dialogConfig)
+      .afterClosed()
+      .subscribe(close => {
+        this.location.back()
+      });
     console.log( 'Le status du compte admin a changé, nouveau status: ' + LoginService.statusAdmin );
   }
 

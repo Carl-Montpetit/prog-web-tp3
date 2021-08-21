@@ -90,7 +90,11 @@ export class ProgramsService {
       const dialogConfig = new MatDialogConfig();
       dialogConfig.data = {text: 'Il faut etre connecté'}
       this.dialog.open(BlankPopupComponent, dialogConfig)
-      this.router.navigate(['connection']);
+      .afterClosed()
+      .subscribe(close => {
+        this.router.navigate(['connection'])
+      });
+      
     }
   }
 }
