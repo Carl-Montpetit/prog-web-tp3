@@ -1,7 +1,8 @@
+<!--TODO : form validation HTML is done but needs the TS validation (for front-end) + back-end too!-->
+<!--TODO : MENTIONNER LES RÉFÉRENCES SVP!!-->
 <div>
   <h4 class="mb-3">Information personnel</h4>
-  <mat-dialog-content>
-  <mat-form-field appearance="fill">
+  <form>
     <div class="row">
       <div class="col-md-6 mb-3">
         <label for="firstName">Prénom</label>
@@ -44,14 +45,16 @@
     <div class="row">
       <div class="col-md-5 mb-3">
         <label for="country">Pays</label>
-        <select (change)="selectChangeHandler($event)" [(ngModel)]="selectedCountry" matNativeControl
+        
+        <select
           class="custom-select d-block w-100"
           id="country"
           required>
           <option *ngFor= "let listePays of shoppingListService.getPays()">{{listePays}}</option>
         </select>
-      </div>   
-      <div *ngIf="isCanada()" class="col-md-4 mb-3">
+      </div>
+    
+      <div class="col-md-4 mb-3">
         <label for="state">Province</label>
         <select
           class="custom-select d-block w-100"
@@ -112,9 +115,7 @@
           required>
       </div>
     </div>
-  </mat-form-field>
-  </mat-dialog-content>
-  <mat-dialog-actions class="justify-content-center">
+  </form>
     <hr class="mb-4">
     <div class="form-inline text-center justify-content-center">
       <button
@@ -128,5 +129,4 @@
         Annuler
       </button>
     </div>
-  </mat-dialog-actions>
 </div>

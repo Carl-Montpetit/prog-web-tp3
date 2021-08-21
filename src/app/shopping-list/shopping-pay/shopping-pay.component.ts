@@ -1,6 +1,5 @@
 import { ShoppingListService } from './../shopping-list.service';
 import { Component, OnInit } from '@angular/core';
-import { Pays } from '../shopping-list.model';
 
 @Component({
   selector: 'app-shopping-pay',
@@ -13,14 +12,6 @@ export class ShoppingPayComponent implements OnInit {
   constructor(public shoppingListService: ShoppingListService) { }
 
   ngOnInit(): void {
-  }
-
-  selectChangeHandler (event: any) {
-    this.selectedCountry = event.target.value;
-  }
-
-  isCanada() {
-    return this.selectedCountry == Pays.CA;
   }
 
 }
