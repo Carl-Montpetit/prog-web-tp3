@@ -8,8 +8,12 @@ import { NgForm } from "@angular/forms";
 })
 export class CreateAccountComponent implements OnInit {
   @ViewChild('f') createAccountForm: NgForm;
-  regEx = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 
+  // password format regex for validation & security
+  // Minimum 8 letters with a least a symbol, upper and lower case letters and a number
+  regEx = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
+  // definition of an account
   private account = {
     firstName: '',
     lastName: '',
@@ -29,6 +33,10 @@ export class CreateAccountComponent implements OnInit {
   onCreateAccount(){
   }
 
+  /**
+   * set the inputs values in variables and send them in a Json file for storage
+   * @param form
+   */
   onSubmit(form: NgForm): void {
     this.account.firstName = this.createAccountForm.value.firstName;
     this.account.lastName = this.createAccountForm.value.lastName;
@@ -36,6 +44,7 @@ export class CreateAccountComponent implements OnInit {
     this.account.email = this.createAccountForm.value.email;
     this.account.pw1 = this.createAccountForm.value.pw1;
     this.account.pw2 = this.createAccountForm.value.pw2;
+    // print the data in the console
     console.log(form);
     console.log(this.account.firstName);
     console.log(this.account.lastName);
@@ -43,11 +52,5 @@ export class CreateAccountComponent implements OnInit {
     console.log(this.account.email);
     console.log(this.account.pw1);
     console.log(this.account.pw2);
-  }
-
-  validateFirstNameFormat(): boolean {
-    if (this.account.firstName.length >= 3 && this.account.firstName.length <= 30) {
-      return true;
-    }
   }
 }

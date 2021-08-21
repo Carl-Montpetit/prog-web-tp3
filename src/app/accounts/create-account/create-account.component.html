@@ -27,10 +27,10 @@
           required
           #fn="ngModel">
         <div class="alert-danger small" *ngIf="!fn.valid && fn.touched">
-          Svp, veuillez entrer un prénom valide!..
+          ⚠️Svp, veuillez entrer un prénom valide!..
         </div>
         <div class="alert-danger small" *ngIf="(fn.value.length < 3 || fn.value.length > 30)&& fn.touched">
-          Svp, veuillez entrer un prénom contenant entre 3 et 30 caractères!..
+          ⚠️Svp, veuillez entrer un prénom contenant entre 3 et 30 caractères!..
         </div>
       </div>
       <div>
@@ -49,10 +49,10 @@
           required
           #ln="ngModel">
         <div class="alert-danger small" *ngIf="!ln.valid && ln.touched">
-          Svp, veuillez entrer un nom de famille valide!..
+          ⚠️Svp, veuillez entrer un nom de famille valide!..
         </div>
         <div class="alert-danger small" *ngIf="(ln.value.length < 3 || ln.value.length > 30) && fn.touched">
-          Svp, veuillez entrer un nom de famille contenant entre 3 et 30 caractères!..
+          ⚠️Svp, veuillez entrer un nom de famille contenant entre 3 et 30 caractères!..
         </div>
       </div>
       <div>
@@ -70,7 +70,7 @@
           required
           #d="ngModel">
         <p class="text-danger small" *ngIf="!d.valid && d.touched">
-          Svp, veuillez entrer une date valide!..
+          ⚠️Svp, veuillez entrer une date valide!..
         </p>
       </div>
       <div>
@@ -90,7 +90,7 @@
           email
           #e="ngModel">
         <p class="text-danger small" *ngIf="!e.valid && e.touched">
-          Svp, veuillez entrer un courriel valide!..
+          ⚠️Svp, veuillez entrer un courriel valide!..
         </p>
       </div>
       <div>
@@ -108,10 +108,10 @@
           placeholder="Créer un mot de passe"
           required
           #p1="ngModel">
-        <p class="text-danger small" *ngIf="p1.touched && (p1.value.length < 8 || p1.value.length > 16) &&
-        regEx.test(p1.value)">
-          Svp, veuillez entrer un mot de passe valide!..
-        </p>
+        <div class="alert-danger small" *ngIf="!(regEx.test(p1.value)) && p1.touched">
+          ⚠️Svp, veuillez entrer un mot de passe contenant au minimum 8 lettres, un symbole(#$%...), un nombre, une
+          lettre majuscule et une lettre minuscule!..
+        </div>
       </div>
       <div>
         <input
@@ -123,7 +123,7 @@
           placeholder="Confirmez le mot de passe"
           required
           #p2="ngModel">
-        <p class="text-danger small" *ngIf="!p2.valid && p2.touched">
+        <p class="alert-danger small" *ngIf="p2.value != p1.value && p2.touched">
           Svp, veuillez entrer deux fois le même mot de passe!..
         </p>
       </div>
