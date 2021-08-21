@@ -33,11 +33,9 @@ export class CreateAccountComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onCreateAccount(){
-  }
-
   /**
    * set the inputs values in variables and send them in a Json file for storage
+   * TODO : implement Json
    * @param form
    */
   onSubmit(form: NgForm): void {
