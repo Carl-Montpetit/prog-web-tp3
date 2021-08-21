@@ -11,6 +11,10 @@ export class LoginComponent implements OnInit {
   @ViewChild( 'fu' ) loginUserForm: NgForm;
   @ViewChild( 'fa' ) loginAdminForm: NgForm;
 
+  // password format regex for validation & security
+  // Minimum 8 letters with a least a symbol, upper and lower case letters and a number
+  regExPw = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
   // the field is initialized empty
   user = {
     email: '',
