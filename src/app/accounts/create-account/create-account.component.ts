@@ -24,6 +24,7 @@ export class CreateAccountComponent implements OnInit {
     email: '',
     pw1: '',
 }
+  accountJson: string;
 
   constructor() {
   }
@@ -49,5 +50,8 @@ export class CreateAccountComponent implements OnInit {
     console.log(this.account.birthday);
     console.log(this.account.email);
     console.log(this.account.pw1);
+    // convert in Json format and write it in the Json file
+    this.accountJson = JSON.stringify(this.account);
+    // ...
   }
 }

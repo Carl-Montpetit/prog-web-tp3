@@ -114,7 +114,7 @@
           placeholder="Entrez votre mot de passe"
           required
           #pa="ngModel">
-        <div class="alert-danger small text-left" *ngIf="(!(regExPw.test(pa.value)) && pa.touched)">
+        <div class="alert-danger small text-left" *ngIf="pa.value != 'admin' && pa.touched">
           ⚠️Svp, veuillez entrer un mot de passe contenant au minimum 8 lettres, un symbole(#$%...), un nombre, une
           lettre majuscule et une lettre minuscule!..
         </div>
