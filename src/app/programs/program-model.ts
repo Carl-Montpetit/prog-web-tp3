@@ -41,7 +41,7 @@ export class Activity {
   }
 }
 
-export class blocActivities {
+export class BlocActivities {
   constructor(private blocActivities: Activity[]) {
   }
 
@@ -50,6 +50,6 @@ export class blocActivities {
    * @param i
    */
   getActivity(i: number): Activity {
-    return blocActivities[i];
+    return BlocActivities[i];
   }
 }

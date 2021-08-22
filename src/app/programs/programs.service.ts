@@ -8,7 +8,8 @@ import { LoginService } from '../login/login.service';
 import { Router } from '@angular/router';
 import { MembersService } from '../accounts/members/members.service';
 import { Type } from "./program-model";
-import { blocActivities } from "./program-model";
+import { BlocActivities } from "./program-model";
+import { Monitors } from './program-model';
 
 @Injectable( {
   providedIn: 'root'
@@ -115,7 +116,15 @@ export class ProgramsService {
     }
   }
 
+  getMonitors() {
+    return Object.values(Monitors);
+  }
+
+  getTypes() {
+    return Object.values(Type);
+  }
+
   createNewProgram() {
-    
+    console.log('fff')
   }
 }
