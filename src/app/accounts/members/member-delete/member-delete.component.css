@@ -1,4 +1,4 @@
-#as {
+#deleteBox {
   font-size: x-large;
   border-radius: 50px;
   border-style: solid;
@@ -13,7 +13,7 @@
   padding-top: 0;
 }
 
-#c {
+#title {
   font-size: large;
   border-radius: 50px;
   border-style: solid;

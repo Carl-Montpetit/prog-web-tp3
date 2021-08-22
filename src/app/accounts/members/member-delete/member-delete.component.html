@@ -1,24 +1,15 @@
-<div id="c" class="row justify-content-center m-5">
+<div id="title" class="row justify-content-center m-5">
   <h2
     class="text-center p-4 m-3 font-weight-bold text-danger border border-dark bg-light rounded-circle">
     Supprimer un enfant de son compte
   </h2>
 </div>
-<div id="as" class="container">
+<div id="deleteBox" class="container">
   <form class="form-group pt-5">
-    <select
-      class="custom-select d-block w-auto form-control"
-      id="kid"
-      required>
-      <option value="">Choisir l'enfant...</option>
-      <option>Enfant1</option>
-      <option>Enfant2</option>
-      <option>Enfant3</option>
-      <option>Enfant4</option>
-      <option>Enfant5</option>
-      <option>Enfant6</option>
+    <select [ngModel]="memberService.tempSelection" (ngModelchange)="memberService.onChange($event.target.value)" id="kid" ngModel name="kid" #kid="ngModel" required>
+      <option value="" *ngFor="let child of memberService.getChildren()">{{child.firstName}}</option>
     </select>
-    <input
+    <input (click)="memberService.removeMember(memberService.tempSelection)"
       id="Supprimer"
       class="form-control btn btn-danger border-dark w-auto text-light m-3"
       type="submit"

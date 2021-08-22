@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MembersService } from '../members.service';
 
 @Component({
   selector: 'app-member-delete',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MemberDeleteComponent implements OnInit {
 
-  constructor() { }
+  constructor(public memberService: MembersService) { }
 
   ngOnInit(): void {
   }
