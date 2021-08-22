@@ -1,14 +1,25 @@
 // Describe what is a program
 export class Program {
-  constructor( public name: string, public description: string, public monitors: string[],
-               public kidsSubscribed: string[], public blocActivities: string[], public activities: string[],
-               public price: number , public imagePath: string ) {}
+  constructor( private name: string, private description: string, private monitors: Monitor[],
+               private blocsActivities: BlocActivities[], private activities: Activity[],
+               private price: number ) {
+  }
 }
 
 export class ShoppingItem {
-  constructor( public name: string, public kidSubscribed: string, public price: number) {}
+  constructor( public name: string, public kidSubscribed: string, public price: number ) {
+  }
 }
 
+// definition of a session
+export class Session {
+  constructor( private session: Program[]) {
+  }
+}
+
+/**
+ * Definition of Type
+ */
 export enum Type {
   A = 'art',
   SC = 'science',
@@ -19,7 +30,10 @@ export enum Type {
   ED = 'éducatif',
 }
 
-export enum Monitors {
+/**
+ * list of existing monitors
+ */
+export enum Monitor {
   CM = 'Carl Montpetit',
   MJ = 'Matthew Jovani',
   PL = 'Patrick Lafontaine',
@@ -28,28 +42,34 @@ export enum Monitors {
   JM = 'Jennefer Morgan',
 }
 
+/**
+ * Definition of activity
+ */
 export class Activity {
-  constructor(private name: string, private type: Type) {
+  constructor( private name: string, private type: Type ) {
   }
 
   getName(): string {
     return this.name;
   }
 
-  getType():Type {
+  getType(): Type {
     return this.type;
   }
 }
 
+/**
+ * Definition of a bloc of activities
+ */
 export class BlocActivities {
-  constructor(private blocActivities: Activity[]) {
+  constructor( private blocActivities: Activity[] ) {
   }
 
   /**
    * return the activity of a given position in the array of activities
    * @param i
    */
-  getActivity(i: number): Activity {
-    return BlocActivities[i];
+  getActivity( i: number ): Activity {
+    return this.blocActivities[ i ];
   }
 }
