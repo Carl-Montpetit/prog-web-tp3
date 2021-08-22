@@ -15,7 +15,7 @@ export class LoginService {
   static isValidated: boolean = false;
 
   // empty constructor
-  constructor(private dialog: MatDialog, private location: Location) {
+  constructor(private dialog: MatDialog, private location: Location, private router: Router) {
   }
 
   /**
@@ -59,7 +59,7 @@ export class LoginService {
       this.dialog.open(BlankPopupComponent, dialogConfig)
       .afterClosed()
       .subscribe(close => {
-        this.location.back()
+        this.router.navigate( [ 'programmes' ] )
       });
     console.log( 'Le status du compte admin a changé, nouveau status: ' + LoginService.statusAdmin );
   }

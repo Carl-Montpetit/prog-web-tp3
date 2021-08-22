@@ -1,7 +1,6 @@
 // Describe what is a program
 export class Program {
-  constructor( private name: string, private description: string, private monitors: Monitor[],
-               private blocsActivities: BlocActivities[], private activities: Activity[],
+  constructor( private name: string, private description: string, private monitors: Monitor[], private activities: Activity[],
                private price: number ) {
   }
 }

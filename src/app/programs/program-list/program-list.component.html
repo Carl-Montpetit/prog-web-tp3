@@ -1,38 +1,30 @@
 <div class="row justify-content-center m-auto p-2 w-auto h-auto text-center">
   <div class="col-sm-11 align-items-center">
-    <div id="newProgram" class="container list-group-item clearfix  m-2 border border-dark justify-content-center">
+    <div *ngIf="!programService.doneSubmit" id="newProgram" class="container list-group-item clearfix  m-2 border border-dark justify-content-center">
       <div class="col text-center justify-content-center">
-        <form (ngSubmit)="programService.createNewProgram()">
+        <form (ngSubmit)="programService.createNewProgram(programForm)" #programForm="ngForm">
           <div>
-        <input placeholder="nom du programme"
+        <input placeholder="nom du programme" id="name" ngModel name="name" #name="ngModel" required
           class="list-group-item-heading text-primary border border-dark w-50 text-center rounded-pill p-2 m-auto">
         <h5 class="font-weight-bolder text-danger mt-3">Description :</h5>
-        <textarea
+        <textarea placeholder="le programme comprend quoi?" id="description" ngModel name="description" #description="ngModel" required
           class="list-group-item-text border border-dark rounded-pill p-3 text-left w-100 font-weight-bold m-auto"></textarea>
         <h5 class="font-weight-bolder text-danger">Activités :</h5>
         <div class="row">
-        <input class="col-4" placeholder="activités"
+        <input class="col-4" placeholder="activités" id="activity" ngModel name="activity" #activity="ngModel" required
           class="list-group-item-heading text-primary border border-dark w-25 text-center rounded-pill p-2 m-auto"><br>
         <label class="text-danger font-weight-bold h5" for="type">Type:</label>
         <select class="col-4 custom-select d-block w-25 border border-dark"
-        id="type"
-        ngModel
-        name="type"
-        required
-        #type="ngModel">
+        id="type" ngModel name="type" #type="ngModel" required>
          <option *ngFor="let typeList of programService.getTypes()">{{typeList}}</option>
         </select>
         </div>
         <div class="row">
-        <input class="col-4" placeholder="prix $"
+        <input class="col-4" placeholder="prix" id="price" ngModel name="price" #price="ngModel" required
           class="list-group-item-heading text-primary border border-dark w-25 text-center rounded-pill p-2 m-auto">
         <label class="text-danger font-weight-bold h5" for="monitor">Moniteur:</label>
         <select class="col-4 custom-select d-block w-25 border border-dark"
-        id="monitor"
-        ngModel
-        name="monitor"
-        required
-        #monitor="ngModel">>
+        id="monitor" ngModel name="monitor" #monitor="ngModel" required>
           <option *ngFor="let monitorList of programService.getMonitors()">{{monitorList}}</option>
         </select>
       </div>
@@ -43,7 +35,7 @@
             class="btn btn-success border-dark text-light font-weight-bolder text-center m-2 p-2 w-auto">
             Creer le programme
           </button>
-          <button 
+          <button (click)="programService.doneSubmit = true"
             class="btn btn-danger border-dark text-light font-weight-bolder text-center m-2 p-2 w">
             Annuler
           </button>
@@ -64,9 +56,9 @@
           {{ program.description }}
         </p>
         <h5 class="font-weight-bolder text-danger">Activités :</h5>
-        <p class="list-group-item-text border border-dark rounded-pill p-2 text-left font-weight-bold m-auto">
-          {{ program.activities }}
-        </p>
+        <span *ngFor="let activity of program.activities" class="list-group-item-text border border-dark rounded-pill p-2 text-left font-weight-bold m-auto">
+          {{ activity.name }}
+        </span><br><br>
         <h5 class="font-weight-bold text-dark">
           Horaire :
           <a class="btn-link" routerLink="/calendrier">Voir le calendrier</a>
@@ -91,18 +83,11 @@
             Supprimer le programme
           </button>
         </div>
-        <div class="col-4">
-          <img
-            [src]="program.imagePath"
-            alt="{{ program.name }}"
-            class="img-responsive"
-            style="max-height: 130px;">
-        </div>
       </div>
     </div>
   </div>
   <div class="col-sm-1">
-    <button (click)="programService.createNewProgram()"
+    <button *ngIf="programService.getAdminStatus()" (click)="programService.doneSubmit = false"
     class="btn btn-success border-dark text-light font-weight-bolder text-center m-2 p-2 w">➕ Creer un nouveau programme</button>
   </div>
 </div>
